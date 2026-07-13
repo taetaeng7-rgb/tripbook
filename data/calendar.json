@@ -1,0 +1,50 @@
+{
+  "1": {
+    "domestic": ["jp-hokkaido-niseko", "jp-chubu-shirakawago-takayama", "jp-okinawa-main"],
+    "overseas": ["th-bangkok-chiangmai", "ph-cebu-bohol", "au-sydney"]
+  },
+  "2": {
+    "domestic": ["jp-hokkaido-sapporo-otaru", "jp-tohoku-zao-onsen", "jp-chubu-kawazu"],
+    "overseas": ["tw-taipei-pingxi", "nz-south-island", "mv-maldives"]
+  },
+  "3": {
+    "domestic": ["jp-okinawa-miyakojima", "jp-kansai-nara", "jp-kanto-mito-kairakuen"],
+    "overseas": ["kr-jeju", "gu-guam", "in-delhi-jaipur"]
+  },
+  "4": {
+    "domestic": ["jp-kansai-kyoto", "jp-tohoku-hirosaki-kakunodate", "jp-chubu-tateyama-alpine"],
+    "overseas": ["kr-seoul-gyeongju", "nl-keukenhof", "th-bangkok-chiangmai"]
+  },
+  "5": {
+    "domestic": ["jp-kanto-ashikaga-shibazakura", "jp-chubu-kamikochi", "jp-kyushu-yakushima"],
+    "overseas": ["it-rome-tuscany", "gr-santorini-athens", "id-bali"]
+  },
+  "6": {
+    "domestic": ["jp-hokkaido-furano", "jp-kanto-kamakura-hakone", "jp-kanto-oze"],
+    "overseas": ["us-hawaii-oahu-maui", "eu-nordic-stockholm-copenhagen", "ch-swiss-alps"]
+  },
+  "7": {
+    "domestic": ["jp-hokkaido-furano", "jp-kansai-kyoto", "jp-chubu-fujisan"],
+    "overseas": ["mn-mongolia-ulaanbaatar", "ch-swiss-alps", "ke-masai-mara"]
+  },
+  "8": {
+    "domestic": ["jp-tohoku-matsuri", "jp-chubu-kamikochi", "jp-hokkaido-shiretoko-akan"],
+    "overseas": ["gb-edinburgh", "ke-masai-mara", "ca-banff-jasper"]
+  },
+  "9": {
+    "domestic": ["jp-hokkaido-daisetsuzan", "jp-chubu-tateyama-alpine", "jp-kanto-kinchakuda"],
+    "overseas": ["es-pt-spain-portugal", "tr-cappadocia", "us-west-national-parks"]
+  },
+  "10": {
+    "domestic": ["jp-kanto-nikko", "jp-chubu-kurobe-gorge", "jp-okinawa-main"],
+    "overseas": ["kr-seorak-seoul", "np-nepal-himalaya", "eg-cairo-luxor"]
+  },
+  "11": {
+    "domestic": ["jp-kansai-kyoto", "jp-chugoku-miyajima-hiroshima", "jp-kanto-kamakura-hakone"],
+    "overseas": ["kh-siemreap-angkor", "ae-dubai-abudhabi", "vn-phuquoc-hcmc"]
+  },
+  "12": {
+    "domestic": ["jp-tohoku-ginzan-onsen", "jp-chubu-nabananosato", "jp-okinawa-main"],
+    "overseas": ["fi-rovaniemi-lapland", "de-at-christmas-markets", "mv-maldives"]
+  }
+}

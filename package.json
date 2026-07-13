@@ -1,0 +1,12 @@
+{
+  "name": "tripbook",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "일본 국내·해외 여행지 월별 시즌 캘린더 웹앱",
+  "scripts": {
+    "test": "node --test",
+    "validate:data": "node scripts/validate-data.mjs",
+    "test:all": "npm run validate:data && npm test"
+  }
+}
