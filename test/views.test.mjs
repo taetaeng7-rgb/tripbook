@@ -41,6 +41,15 @@ test('월별 — 9월 해외 세그먼트만 (A3)', () => {
   noUndefined(html);
 });
 
+test('월별 — 월 칩 이동 시 세그먼트(scope) 유지', () => {
+  const html = views.monthView(4, 'overseas', picksFor(4, calendar, byId), 7);
+  assert.ok(html.includes('href="#/month/5?scope=overseas"'), '월 칩이 scope 쿼리를 유지해야 함');
+  const domHtml = views.monthView(4, 'domestic', picksFor(4, calendar, byId), 7);
+  assert.ok(domHtml.includes('href="#/month/5?scope=domestic"'));
+  const allHtml = views.monthView(4, 'all', picksFor(4, calendar, byId), 7);
+  assert.ok(!allHtml.includes('#/month/5?scope='), '전체 세그먼트는 쿼리 없음');
+});
+
 test('월별 — 12개월 전부 국내/해외 각 3건 렌더', () => {
   for (let m = 1; m <= 12; m++) {
     const picks = picksFor(m, calendar, byId);

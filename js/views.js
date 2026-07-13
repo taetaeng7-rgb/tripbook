@@ -68,11 +68,12 @@ function scopeSection(scope, dests, month) {
   </section>`;
 }
 
-export function monthChips(active, now) {
+export function monthChips(active, now, scope) {
+  const q = scope === 'domestic' || scope === 'overseas' ? `?scope=${scope}` : '';
   const chips = [];
   for (let m = 1; m <= 12; m++) {
     const cls = ['chip', m === active ? 'chip--active' : '', m === now ? 'chip--now' : ''].filter(Boolean).join(' ');
-    chips.push(`<a class="${cls}" href="#/month/${m}">${m}월</a>`);
+    chips.push(`<a class="${cls}" href="#/month/${m}${q}">${m}월</a>`);
   }
   return `<div class="chips" role="tablist">${chips.join('')}</div>`;
 }
@@ -100,7 +101,7 @@ export function monthView(month, scope, picks, now) {
   if (scope === 'all' || scope === 'overseas') body += scopeSection('overseas', picks.overseas, month);
   return `
   <h1 class="page-title">월별 여행지</h1>
-  ${monthChips(month, now)}
+  ${monthChips(month, now, scope)}
   <div class="segs">${seg('all')}${seg('domestic')}${seg('overseas')}</div>
   ${body}`;
 }
