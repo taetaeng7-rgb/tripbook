@@ -5,6 +5,7 @@
     "scope": "domestic",
     "country": "일본",
     "region": "홋카이도",
+    "prefecture": "홋카이도",
     "bestMonths": [12, 1, 2],
     "peakMonth": 1,
     "monthlyReasons": {
@@ -27,6 +28,7 @@
     "scope": "domestic",
     "country": "일본",
     "region": "주부",
+    "prefecture": "기후현",
     "bestMonths": [12, 1, 2],
     "peakMonth": 1,
     "monthlyReasons": {
@@ -50,6 +52,7 @@
     "scope": "domestic",
     "country": "일본",
     "region": "오키나와",
+    "prefecture": "오키나와현",
     "bestMonths": [1, 10, 12],
     "peakMonth": 1,
     "monthlyReasons": {
@@ -72,6 +75,7 @@
     "scope": "domestic",
     "country": "일본",
     "region": "홋카이도",
+    "prefecture": "홋카이도",
     "bestMonths": [2],
     "peakMonth": 2,
     "monthlyReasons": {
@@ -96,6 +100,7 @@
     "scope": "domestic",
     "country": "일본",
     "region": "도호쿠",
+    "prefecture": "야마가타현",
     "bestMonths": [1, 2],
     "peakMonth": 2,
     "monthlyReasons": {
@@ -117,6 +122,7 @@
     "scope": "domestic",
     "country": "일본",
     "region": "주부",
+    "prefecture": "시즈오카현",
     "bestMonths": [2, 3],
     "peakMonth": 2,
     "monthlyReasons": {
@@ -138,6 +144,7 @@
     "scope": "domestic",
     "country": "일본",
     "region": "오키나와",
+    "prefecture": "오키나와현",
     "bestMonths": [3, 7],
     "peakMonth": 7,
     "monthlyReasons": {
@@ -159,6 +166,7 @@
     "scope": "domestic",
     "country": "일본",
     "region": "간사이",
+    "prefecture": "나라현",
     "bestMonths": [3, 11],
     "peakMonth": 3,
     "monthlyReasons": {
@@ -180,6 +188,7 @@
     "scope": "domestic",
     "country": "일본",
     "region": "간토",
+    "prefecture": "이바라키현",
     "bestMonths": [2, 3],
     "peakMonth": 3,
     "monthlyReasons": {
@@ -200,6 +209,7 @@
     "scope": "domestic",
     "country": "일본",
     "region": "간사이",
+    "prefecture": "교토부",
     "bestMonths": [4, 7, 11],
     "peakMonth": 4,
     "monthlyReasons": {
@@ -223,6 +233,7 @@
     "scope": "domestic",
     "country": "일본",
     "region": "도호쿠",
+    "prefecture": "아오모리현·아키타현",
     "bestMonths": [4, 5],
     "peakMonth": 4,
     "monthlyReasons": {
@@ -244,6 +255,7 @@
     "scope": "domestic",
     "country": "일본",
     "region": "주부",
+    "prefecture": "도야마현·나가노현",
     "bestMonths": [4, 5, 9],
     "peakMonth": 4,
     "monthlyReasons": {
@@ -267,6 +279,7 @@
     "scope": "domestic",
     "country": "일본",
     "region": "간토",
+    "prefecture": "도치기현·야마나시현",
     "bestMonths": [4, 5],
     "peakMonth": 5,
     "monthlyReasons": {
@@ -288,6 +301,7 @@
     "scope": "domestic",
     "country": "일본",
     "region": "주부",
+    "prefecture": "나가노현",
     "bestMonths": [5, 8],
     "peakMonth": 5,
     "monthlyReasons": {
@@ -308,6 +322,7 @@
     "scope": "domestic",
     "country": "일본",
     "region": "규슈",
+    "prefecture": "가고시마현",
     "bestMonths": [5],
     "peakMonth": 5,
     "monthlyReasons": {
@@ -328,6 +343,7 @@
     "scope": "domestic",
     "country": "일본",
     "region": "홋카이도",
+    "prefecture": "홋카이도",
     "bestMonths": [6, 7, 8],
     "peakMonth": 7,
     "monthlyReasons": {
@@ -351,6 +367,7 @@
     "scope": "domestic",
     "country": "일본",
     "region": "간토",
+    "prefecture": "가나가와현",
     "bestMonths": [6, 11],
     "peakMonth": 6,
     "monthlyReasons": {
@@ -371,6 +388,7 @@
     "scope": "domestic",
     "country": "일본",
     "region": "간토",
+    "prefecture": "군마현·후쿠시마현",
     "bestMonths": [5, 6],
     "peakMonth": 6,
     "monthlyReasons": {
@@ -391,6 +409,7 @@
     "scope": "domestic",
     "country": "일본",
     "region": "주부",
+    "prefecture": "야마나시현·시즈오카현",
     "bestMonths": [7, 8],
     "peakMonth": 7,
     "monthlyReasons": {
@@ -412,6 +431,7 @@
     "scope": "domestic",
     "country": "일본",
     "region": "도호쿠",
+    "prefecture": "아오모리현·아키타현·미야기현",
     "bestMonths": [8],
     "peakMonth": 8,
     "monthlyReasons": {
@@ -437,6 +457,7 @@
     "scope": "domestic",
     "country": "일본",
     "region": "홋카이도",
+    "prefecture": "홋카이도",
     "bestMonths": [7, 8],
     "peakMonth": 8,
     "monthlyReasons": {
@@ -457,6 +478,7 @@
     "scope": "domestic",
     "country": "일본",
     "region": "홋카이도",
+    "prefecture": "홋카이도",
     "bestMonths": [9],
     "peakMonth": 9,
     "monthlyReasons": {
@@ -476,6 +498,7 @@
     "scope": "domestic",
     "country": "일본",
     "region": "간토",
+    "prefecture": "사이타마현",
     "bestMonths": [9],
     "peakMonth": 9,
     "monthlyReasons": {
@@ -495,6 +518,7 @@
     "scope": "domestic",
     "country": "일본",
     "region": "간토",
+    "prefecture": "도치기현",
     "bestMonths": [10, 11],
     "peakMonth": 10,
     "monthlyReasons": {
@@ -515,6 +539,7 @@
     "scope": "domestic",
     "country": "일본",
     "region": "주부",
+    "prefecture": "도야마현",
     "bestMonths": [10, 11],
     "peakMonth": 10,
     "monthlyReasons": {
@@ -535,6 +560,7 @@
     "scope": "domestic",
     "country": "일본",
     "region": "주고쿠",
+    "prefecture": "히로시마현",
     "bestMonths": [11],
     "peakMonth": 11,
     "monthlyReasons": {
@@ -554,6 +580,7 @@
     "scope": "domestic",
     "country": "일본",
     "region": "도호쿠",
+    "prefecture": "야마가타현",
     "bestMonths": [12, 1, 2],
     "peakMonth": 1,
     "monthlyReasons": {
@@ -576,6 +603,7 @@
     "scope": "domestic",
     "country": "일본",
     "region": "주부",
+    "prefecture": "미에현",
     "bestMonths": [12, 1],
     "peakMonth": 12,
     "monthlyReasons": {
@@ -596,6 +624,7 @@
     "scope": "domestic",
     "country": "일본",
     "region": "간토",
+    "prefecture": "군마현",
     "bestMonths": [1, 2, 12],
     "peakMonth": 1,
     "monthlyReasons": {
@@ -617,6 +646,7 @@
     "scope": "domestic",
     "country": "일본",
     "region": "홋카이도",
+    "prefecture": "홋카이도",
     "bestMonths": [1, 2, 12],
     "peakMonth": 12,
     "monthlyReasons": {
@@ -638,6 +668,7 @@
     "scope": "domestic",
     "country": "일본",
     "region": "홋카이도",
+    "prefecture": "홋카이도",
     "bestMonths": [1, 2, 3],
     "peakMonth": 2,
     "monthlyReasons": {
@@ -659,6 +690,7 @@
     "scope": "domestic",
     "country": "일본",
     "region": "규슈",
+    "prefecture": "오이타현",
     "bestMonths": [1, 2, 11, 12],
     "peakMonth": 12,
     "monthlyReasons": {
@@ -680,6 +712,7 @@
     "scope": "domestic",
     "country": "일본",
     "region": "주부",
+    "prefecture": "나가노현",
     "bestMonths": [1, 2, 3, 12],
     "peakMonth": 1,
     "monthlyReasons": {
@@ -702,6 +735,7 @@
     "scope": "domestic",
     "country": "일본",
     "region": "규슈",
+    "prefecture": "후쿠오카현",
     "bestMonths": [3, 4],
     "peakMonth": 3,
     "monthlyReasons": {
@@ -721,6 +755,7 @@
     "scope": "domestic",
     "country": "일본",
     "region": "간사이",
+    "prefecture": "나라현",
     "bestMonths": [4],
     "peakMonth": 4,
     "monthlyReasons": {
@@ -740,6 +775,7 @@
     "scope": "domestic",
     "country": "일본",
     "region": "주부",
+    "prefecture": "야마나시현",
     "bestMonths": [4, 11],
     "peakMonth": 4,
     "monthlyReasons": {
@@ -759,6 +795,7 @@
     "scope": "domestic",
     "country": "일본",
     "region": "오키나와",
+    "prefecture": "오키나와현",
     "bestMonths": [6, 7],
     "peakMonth": 7,
     "monthlyReasons": {
@@ -779,6 +816,7 @@
     "scope": "domestic",
     "country": "일본",
     "region": "주부",
+    "prefecture": "니가타현",
     "bestMonths": [5, 6],
     "peakMonth": 6,
     "monthlyReasons": {
@@ -798,6 +836,7 @@
     "scope": "domestic",
     "country": "일본",
     "region": "간사이",
+    "prefecture": "오사카부",
     "bestMonths": [7],
     "peakMonth": 7,
     "monthlyReasons": {
@@ -818,6 +857,7 @@
     "scope": "domestic",
     "country": "일본",
     "region": "주부",
+    "prefecture": "니가타현",
     "bestMonths": [8],
     "peakMonth": 8,
     "monthlyReasons": {
@@ -838,6 +878,7 @@
     "scope": "domestic",
     "country": "일본",
     "region": "시코쿠",
+    "prefecture": "도쿠시마현",
     "bestMonths": [8],
     "peakMonth": 8,
     "monthlyReasons": {
@@ -858,6 +899,7 @@
     "scope": "domestic",
     "country": "일본",
     "region": "도호쿠",
+    "prefecture": "아오모리현",
     "bestMonths": [5, 10],
     "peakMonth": 10,
     "monthlyReasons": {
@@ -877,6 +919,7 @@
     "scope": "domestic",
     "country": "일본",
     "region": "간토",
+    "prefecture": "도치기현",
     "bestMonths": [9, 10],
     "peakMonth": 10,
     "monthlyReasons": {
@@ -896,6 +939,7 @@
     "scope": "domestic",
     "country": "일본",
     "region": "주부",
+    "prefecture": "나가노현",
     "bestMonths": [7, 8, 10],
     "peakMonth": 10,
     "monthlyReasons": {
@@ -916,6 +960,7 @@
     "scope": "domestic",
     "country": "일본",
     "region": "주고쿠",
+    "prefecture": "시마네현",
     "bestMonths": [11],
     "peakMonth": 11,
     "monthlyReasons": {
@@ -935,6 +980,7 @@
     "scope": "domestic",
     "country": "일본",
     "region": "시코쿠",
+    "prefecture": "에히메현",
     "bestMonths": [11, 12],
     "peakMonth": 11,
     "monthlyReasons": {
@@ -954,6 +1000,7 @@
     "scope": "domestic",
     "country": "일본",
     "region": "주부",
+    "prefecture": "이시카와현",
     "bestMonths": [4, 11, 12],
     "peakMonth": 11,
     "monthlyReasons": {
@@ -974,6 +1021,7 @@
     "scope": "domestic",
     "country": "일본",
     "region": "규슈",
+    "prefecture": "미야자키현",
     "bestMonths": [5, 10],
     "peakMonth": 10,
     "monthlyReasons": {

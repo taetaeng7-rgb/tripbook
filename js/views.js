@@ -12,6 +12,8 @@ const budgetMark = d => '¥'.repeat(d.budgetLevel || 0);
 const daysText = d => (d.recommendedDays ? `${d.recommendedDays.min}~${d.recommendedDays.max}일` : '');
 const hoursText = d => (d.access && d.access.hours ? `이동 ~${d.access.hours}h` : '');
 const monthsBadge = d => `${(d.bestMonths || []).join('·')}월`;
+// 위치 표기: 국내 = 도도부현, 해외 = 국가 (도시는 이름에 포함)
+const locationText = d => (d.scope === 'domestic' ? (d.prefecture || d.region) : d.country);
 const placeHref = (d, m) => `#/place/${encodeURIComponent(d.id)}?m=${m}`;
 
 function tagChips(tags) {
@@ -40,7 +42,7 @@ function card(d, month) {
     <span class="card__body">
       <span class="card__title">${esc(d.name.ko)} ${badges(d, month)}</span>
       <span class="card__reason">${esc(reasonFor(d, month))}</span>
-      <span class="card__meta">${budgetMark(d)} · ${daysText(d)} · ${hoursText(d)} · ${esc(d.region)}</span>
+      <span class="card__meta">${budgetMark(d)} · ${daysText(d)} · ${hoursText(d)} · ${esc(locationText(d))}</span>
     </span>
   </a>`;
 }
@@ -54,7 +56,7 @@ function browseCard(d) {
     <span class="card__body">
       <span class="card__title">${esc(d.name.ko)}</span>
       <span class="card__reason">${esc(d.summary)}</span>
-      <span class="card__meta"><span class="months">베스트 ${monthsBadge(d)}</span> · ${budgetMark(d)} · ${hoursText(d)}</span>
+      <span class="card__meta"><span class="months">베스트 ${monthsBadge(d)}</span> · ${budgetMark(d)} · ${hoursText(d)} · ${esc(locationText(d))}</span>
     </span>
   </a>`;
 }
@@ -247,7 +249,7 @@ export function place(d, ctxMonth, others, state = { wish: false, visited: false
       ${d.name.local ? `<p class="hero__local">${esc(d.name.local)}</p>` : ''}
       <div class="hero__badges">
         <span class="badge badge--scope">${SCOPES[d.scope].label}</span>
-        <span class="badge">${esc(d.country)} · ${esc(d.region)}</span>
+        <span class="badge">${esc(d.scope === 'domestic' && d.prefecture ? `${d.prefecture} · ${d.region}` : `${d.country} · ${d.region}`)}</span>
         <span class="badge">베스트 ${monthsBadge(d)}</span>
       </div>
     </div>

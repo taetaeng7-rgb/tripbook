@@ -152,6 +152,16 @@ test('내 목록 — 위시·가봤음 섹션과 빈 상태', () => {
   assert.ok(!html.includes('undefined'));
 });
 
+test('카드·상세 — 국내는 도도부현, 해외는 국가 표시', () => {
+  const feb = views.monthView(2, 'all', picksFor(2, calendar, byId), 7);
+  assert.match(feb, /야마가타현/); // 자오 온천 카드 메타
+  assert.match(feb, /대만/);      // 타이베이 카드 메타 (권역 대신 국가)
+  const zao = views.place(byId.get('jp-tohoku-zao-onsen'), 2, []);
+  assert.match(zao, /야마가타현 · 도호쿠/); // 상세 히어로 배지
+  const capp = views.place(byId.get('tr-cappadocia'), 9, []);
+  assert.match(capp, /튀르키예 · 유럽/);
+});
+
 test('상세 — 위시/가봤음 버튼 상태', () => {
   const d = byId.get('jp-hokkaido-furano');
   const off = views.place(d, 7, [], { wish: false, visited: false });

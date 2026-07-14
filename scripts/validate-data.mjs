@@ -75,6 +75,9 @@ for (const d of all) {
   // ── D09: 길이 ──
   if (d.summary && d.summary.length > 90) warn('D09', `${id}: summary 90자 초과(${d.summary.length})`);
 
+  // ── D15: 국내는 prefecture(도도부현) 필수 ──
+  if (d.scope === 'domestic' && (!d.prefecture || !String(d.prefecture).trim())) err('D15', `${id}: 국내 여행지 prefecture 누락`);
+
   // ── D14: events 연도 하드코딩 ──
   for (const e of d.events || []) {
     if (e.when && YEAR_RE.test(e.when)) warn('D14', `${id}: events.when에 연도 하드코딩 — ${e.when}`);

@@ -22,7 +22,7 @@ export function matchDest(d, { month, days, themes = [], scope = 'all', q = '' }
   if (days && days.lo && !(d.recommendedDays.min <= days.hi && d.recommendedDays.max >= days.lo)) return false;
   if (themes.length && !themes.some(t => (d.themes || []).includes(t))) return false;
   if (q) {
-    const hay = [d.name.ko, d.name.local, d.country, d.region, d.summary, ...(d.themes || [])]
+    const hay = [d.name.ko, d.name.local, d.country, d.region, d.prefecture, d.summary, ...(d.themes || [])]
       .filter(Boolean).join(' ').toLowerCase();
     if (!hay.includes(q.toLowerCase())) return false;
   }
