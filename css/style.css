@@ -87,6 +87,9 @@ a { color: inherit; text-decoration: none; }
 
 .brand { font-weight: 800; font-size: 18px; letter-spacing: -.2px; }
 
+.topbar__acts { display: flex; gap: 6px; align-items: center; }
+.topbar__acts .icon-btn { text-decoration: none; line-height: 1.4; }
+
 .icon-btn {
   border: 1px solid var(--border);
   background: var(--card);
@@ -327,3 +330,64 @@ a { color: inherit; text-decoration: none; }
   .skeleton-card { animation: none; }
   .card { transition: none; }
 }
+
+/* ── 연휴 스트립 ── */
+.notice {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--peak-fg);
+  border-radius: 12px;
+  padding: 9px 12px;
+  font-size: 13.5px;
+  color: var(--muted);
+  margin: 0 0 12px;
+}
+.notice--calm { border-left-color: var(--domestic); }
+.notice strong { color: var(--text); }
+
+/* ── 조건으로 찾기 ── */
+.search-input {
+  width: 100%;
+  padding: 11px 14px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--text);
+  font-size: 15px;
+  margin: 2px 0 8px;
+}
+.search-input:focus { outline: 2px solid var(--overseas); outline-offset: 1px; }
+
+.filter-row { margin: 8px 0 12px; }
+.filter-row__label { display: block; font-size: 12.5px; color: var(--muted); margin-bottom: 6px; font-weight: 600; }
+
+.chips--wrap { flex-wrap: wrap; overflow: visible; }
+
+.chip--on {
+  background: var(--domestic-soft);
+  border-color: var(--domestic);
+  color: var(--domestic);
+  font-weight: 600;
+}
+
+.count { color: var(--muted); font-size: 13.5px; margin: 12px 0 10px; }
+.count strong { color: var(--text); }
+.count-inline { font-size: 13px; color: var(--muted); font-weight: 600; }
+
+.minis--wrap { flex-wrap: wrap; }
+
+/* ── 위시리스트·가봤음 버튼 ── */
+.acts { display: flex; gap: 8px; margin: 12px 0 4px; }
+.act {
+  flex: 1;
+  padding: 11px 8px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.act--on { background: var(--warn-bg); border-color: var(--warn-fg); color: var(--warn-fg); }
+.act--visited.act--on { background: var(--domestic-soft); border-color: var(--domestic); color: var(--domestic); }

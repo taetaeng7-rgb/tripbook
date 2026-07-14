@@ -589,5 +589,403 @@
     "recommendedDays": { "min": 1, "max": 2 },
     "budgetLevel": 2,
     "events": [{ "name": "일루미네이션", "when": "예년 10월 하순~5월" }]
+  },
+  {
+    "id": "jp-kanto-kusatsu",
+    "name": { "ko": "쿠사츠 온천", "local": "草津温泉" },
+    "scope": "domestic",
+    "country": "일본",
+    "region": "간토",
+    "bestMonths": [1, 2, 12],
+    "peakMonth": 1,
+    "monthlyReasons": {
+      "1": { "text": "유바타케에 김이 오르는 한겨울 — 자연 용출량 일본 최대의 온천을 설경과 함께.", "tags": ["자연"] },
+      "2": { "text": "설경 온천 계속 — 유모미 공연과 눈 쌓인 온천가 골목 산책.", "tags": ["자연"] },
+      "12": { "text": "겨울 개막 — 연말연시 전 12월 중순이 한산한 노림수.", "tags": ["비용·혼잡", "자연"] }
+    },
+    "summary": "자연 용출량 일본 제일 — 유바타케 김이 오르는 온천 마을의 겨울.",
+    "highlights": ["유바타케 야경", "유모미 공연(네츠노유)", "사이노카와라 대노천탕", "온천 만주 골목"],
+    "themes": ["온천", "설경"],
+    "access": { "how": "도쿄→나가노하라쿠사츠구치 특급 2.5h + 버스 25m", "hours": 3 },
+    "recommendedDays": { "min": 1, "max": 2 },
+    "budgetLevel": 2,
+    "tips": ["겨울 주말 버스·숙소는 조기 마감 — 평일 1박이 쾌적"]
+  },
+  {
+    "id": "jp-hokkaido-hakodate",
+    "name": { "ko": "하코다테", "local": "函館" },
+    "scope": "domestic",
+    "country": "일본",
+    "region": "홋카이도",
+    "bestMonths": [1, 2, 12],
+    "peakMonth": 12,
+    "monthlyReasons": {
+      "12": { "text": "크리스마스 판타지(항구 일루미)와 눈 내린 모토마치 언덕 — 겨울 야경의 개막.", "tags": ["축제", "자연"] },
+      "1": { "text": "공기가 가장 맑은 한겨울의 하코다테산 야경 + 아침시장 해산물.", "tags": ["자연"] },
+      "2": { "text": "눈축제 시즌과 연계 — 삿포로와 묶는 겨울 홋카이도 순회의 한 축.", "tags": ["자연", "축제"] }
+    },
+    "summary": "세계적 야경과 아침시장 — 겨울에 더 빛나는 항구 도시.",
+    "highlights": ["하코다테산 야경", "아침시장 카이센동", "모토마치 언덕·교회군", "고료카쿠 타워"],
+    "themes": ["도시", "설경", "미식"],
+    "access": { "how": "하네다→하코다테 1h20m", "hours": 2 },
+    "recommendedDays": { "min": 2, "max": 3 },
+    "budgetLevel": 3,
+    "tips": ["야경은 일몰 30분 전 로프웨이 탑승이 정석 — 방한 필수"]
+  },
+  {
+    "id": "jp-hokkaido-abashiri-ryuhyo",
+    "name": { "ko": "아바시리·우토로 유빙", "local": "網走・ウトロ 流氷" },
+    "scope": "domestic",
+    "country": "일본",
+    "region": "홋카이도",
+    "bestMonths": [1, 2, 3],
+    "peakMonth": 2,
+    "monthlyReasons": {
+      "1": { "text": "1월 하순 유빙 접안 시작 — 쇄빙선 시즌 개막.", "tags": ["자연"] },
+      "2": { "text": "유빙 절정 — 오호츠크해를 메우는 얼음 바다와 쇄빙선, 우토로의 유빙 워크까지 겨울 도동의 하이라이트.", "tags": ["자연", "액티비티"] },
+      "3": { "text": "유빙 막바지 + 낮이 길어져 관광 여유 — 두루미·백조 겨울 조류도 시즌.", "tags": ["자연"] }
+    },
+    "summary": "오호츠크해의 유빙 — 배로 얼음 바다를 가르는 2월.",
+    "highlights": ["유빙 쇄빙선(아바시리)", "유빙 워크(우토로)", "겨울 두루미·백조 관찰", "오호츠크 해산물"],
+    "themes": ["자연", "설경"],
+    "access": { "how": "하네다→메만베츠 1h45m + 버스·차", "hours": 3.5 },
+    "recommendedDays": { "min": 2, "max": 3 },
+    "budgetLevel": 3,
+    "cautions": ["유빙은 바람·해류 따라 접안이 변동 — 출발 전 운항·접안 정보 확인"]
+  },
+  {
+    "id": "jp-kyushu-yufuin-beppu",
+    "name": { "ko": "유후인·벳푸", "local": "湯布院・別府" },
+    "scope": "domestic",
+    "country": "일본",
+    "region": "규슈",
+    "bestMonths": [1, 2, 11, 12],
+    "peakMonth": 12,
+    "monthlyReasons": {
+      "11": { "text": "유후다케 단풍과 킨린코 아침 안개 — 늦가을 온천 산책.", "tags": ["자연"] },
+      "12": { "text": "겨울 온천의 본편 — 김이 오르는 지옥순례와 노천탕.", "tags": ["자연"] },
+      "1": { "text": "한겨울 아침 킨린코 물안개가 가장 짙어지는 시기.", "tags": ["자연"] },
+      "2": { "text": "겨울 끝물의 한산함 — 온천가 골목이 조용해지는 달.", "tags": ["비용·혼잡"] }
+    },
+    "summary": "안개 피는 호수와 지옥 온천 — 규슈 온천의 양대 명가.",
+    "highlights": ["킨린코 아침 안개", "벳푸 지옥순례", "유후인 골목·료칸", "지옥찜 미식"],
+    "themes": ["온천", "자연", "미식"],
+    "access": { "how": "하네다→오이타 1.7h + 버스", "hours": 3 },
+    "recommendedDays": { "min": 2, "max": 3 },
+    "budgetLevel": 3
+  },
+  {
+    "id": "jp-chubu-nozawa-shiga",
+    "name": { "ko": "노자와온천·시가고원", "local": "野沢温泉・志賀高原" },
+    "scope": "domestic",
+    "country": "일본",
+    "region": "주부",
+    "bestMonths": [1, 2, 3, 12],
+    "peakMonth": 1,
+    "monthlyReasons": {
+      "12": { "text": "시즌 인 — 12월 하순부터 설질 안정.", "tags": ["액티비티"] },
+      "1": { "text": "파우더 절정 + 무료 외탕 13곳 순례. 1/15 도소진 화축제는 일본 3대 불축제.", "tags": ["액티비티", "축제"] },
+      "2": { "text": "설질 최상 계속 — 시가고원은 일본 최대급 스키장 연결.", "tags": ["액티비티"] },
+      "3": { "text": "봄 스키 — 한산한 평일과 온화한 기온.", "tags": ["액티비티", "비용·혼잡"] }
+    },
+    "summary": "온천 마을에서 걸어가는 스키장 — 외탕 13곳의 설국.",
+    "highlights": ["노자와 외탕 순례(무료)", "도소진 화축제(1/15)", "시가고원 스키", "노자와나 절임 미식"],
+    "themes": ["스키", "온천", "축제"],
+    "access": { "how": "도쿄→이이야마 신칸센 1.7h + 버스 25m", "hours": 2.5 },
+    "recommendedDays": { "min": 2, "max": 3 },
+    "budgetLevel": 2,
+    "events": [{ "name": "도소진 화축제", "when": "1/15" }]
+  },
+  {
+    "id": "jp-kyushu-fukuoka-dazaifu",
+    "name": { "ko": "후쿠오카·다자이후", "local": "福岡・太宰府" },
+    "scope": "domestic",
+    "country": "일본",
+    "region": "규슈",
+    "bestMonths": [3, 4],
+    "peakMonth": 3,
+    "monthlyReasons": {
+      "3": { "text": "일본에서 가장 이른 소메이요시노 개화권(3월 하순) + 다자이후 매화 끝물 — 미식과 봄을 함께.", "tags": ["자연"] },
+      "4": { "text": "마이즈루 공원 벚꽃 만개 — 포장마차(야타이)와 꽃놀이의 조합.", "tags": ["자연"] }
+    },
+    "summary": "야타이와 벚꽃 — 봄이 가장 먼저 오는 미식 도시.",
+    "highlights": ["마이즈루 공원 벚꽃", "다자이후 텐만구", "나카스 야타이", "모츠나베·하카타 라멘"],
+    "themes": ["미식", "벚꽃", "도시"],
+    "access": { "how": "하네다→후쿠오카 2h", "hours": 2.5 },
+    "recommendedDays": { "min": 2, "max": 3 },
+    "budgetLevel": 2
+  },
+  {
+    "id": "jp-kansai-yoshinoyama",
+    "name": { "ko": "요시노산", "local": "吉野山" },
+    "scope": "domestic",
+    "country": "일본",
+    "region": "간사이",
+    "bestMonths": [4],
+    "peakMonth": 4,
+    "monthlyReasons": {
+      "4": { "text": "산 전체를 뒤덮는 벚꽃 3만 그루 — 시모센본부터 오쿠센본까지 고도를 따라 차례로 오르는 개화.", "tags": ["자연"] }
+    },
+    "summary": "천 년의 벚꽃 산 — 3만 그루가 산을 오르며 핀다.",
+    "highlights": ["시모·나카·카미·오쿠센본 전망", "킨푸센지 자오도", "요시노 쿠즈모치"],
+    "themes": ["벚꽃", "산악"],
+    "access": { "how": "도쿄→교토 신칸센 2.2h + 킨테츠 1.5h+", "hours": 4.5 },
+    "recommendedDays": { "min": 1, "max": 2 },
+    "budgetLevel": 2,
+    "cautions": ["만개 주말 대혼잡 — 이른 아침 도착·평일 권장"]
+  },
+  {
+    "id": "jp-chubu-fujigoko",
+    "name": { "ko": "후지고코·가와구치코", "local": "富士五湖・河口湖" },
+    "scope": "domestic",
+    "country": "일본",
+    "region": "주부",
+    "bestMonths": [4, 11],
+    "peakMonth": 4,
+    "monthlyReasons": {
+      "4": { "text": "벚꽃+후지산의 대표 구도 — 4월 중순 호반 개화, 우부야가사키 등 명소가 절정.", "tags": ["자연"] },
+      "11": { "text": "단풍 회랑(모미지 카이로) + 공기가 맑아 후지 조망 확률이 가장 높은 계절.", "tags": ["자연", "기후"] }
+    },
+    "summary": "후지산을 액자에 넣는 호수 — 벚꽃의 봄, 단풍의 가을.",
+    "highlights": ["가와구치코 벚꽃×후지", "단풍 회랑(11월)", "오이시 공원", "호반 온천"],
+    "themes": ["벚꽃", "단풍", "온천", "자연"],
+    "access": { "how": "신주쿠→가와구치코 특급/버스 2h", "hours": 2 },
+    "recommendedDays": { "min": 1, "max": 2 },
+    "budgetLevel": 1
+  },
+  {
+    "id": "jp-okinawa-ishigaki",
+    "name": { "ko": "이시가키·타케토미", "local": "石垣・竹富" },
+    "scope": "domestic",
+    "country": "일본",
+    "region": "오키나와",
+    "bestMonths": [6, 7],
+    "peakMonth": 7,
+    "monthlyReasons": {
+      "6": { "text": "6월 하순 장마가 걷힌 직후 — 여름 개막, 성수기 전 잠깐의 틈.", "tags": ["기후", "비용·혼잡"] },
+      "7": { "text": "카비라만의 에메랄드가 절정 — 타케토미 물소차와 별모래 해변. 태풍 전 7월 상순이 노림수.", "tags": ["기후", "자연"] }
+    },
+    "summary": "카비라만과 물소차 — 야에야마의 원풍경.",
+    "highlights": ["카비라만", "타케토미섬 물소차·붉은 기와 마을", "만타 스노클링", "별하늘 보호구 관측"],
+    "themes": ["바다·리조트", "자연"],
+    "access": { "how": "하네다→이시가키 3.5h", "hours": 4 },
+    "recommendedDays": { "min": 3, "max": 4 },
+    "budgetLevel": 3,
+    "cautions": ["7월 중순 이후~9월은 태풍 가능성 — 예비일·보험 권장"]
+  },
+  {
+    "id": "jp-chubu-sado",
+    "name": { "ko": "사도섬", "local": "佐渡島" },
+    "scope": "domestic",
+    "country": "일본",
+    "region": "주부",
+    "bestMonths": [5, 6],
+    "peakMonth": 6,
+    "monthlyReasons": {
+      "5": { "text": "신록의 계단식 논 — 물 댄 다랑이가 거울이 되는 이앙기의 섬 풍경.", "tags": ["자연"] },
+      "6": { "text": "타라이부네와 청명한 초여름 바다 — 반딧불의 계절, 본토 장마의 영향이 얕은 니가타 앞바다.", "tags": ["자연", "기후"] }
+    },
+    "summary": "금광과 타라이부네 — 초여름이 가장 아름다운 외딴 섬.",
+    "highlights": ["사도 금산", "타라이부네(대야배) 체험", "계단식 논 풍경", "토키(따오기) 관찰"],
+    "themes": ["자연", "문화·유적"],
+    "access": { "how": "도쿄→니가타 신칸센 2h + 페리 1~2.5h", "hours": 5 },
+    "recommendedDays": { "min": 2, "max": 3 },
+    "budgetLevel": 2
+  },
+  {
+    "id": "jp-kansai-osaka-tenjin",
+    "name": { "ko": "오사카 텐진마츠리", "local": "大阪 天神祭" },
+    "scope": "domestic",
+    "country": "일본",
+    "region": "간사이",
+    "bestMonths": [7],
+    "peakMonth": 7,
+    "monthlyReasons": {
+      "7": { "text": "일본 3대 마츠리 텐진마츠리(7/24~25) — 후나토교(배 행렬)와 봉납 불꽃이 강 위에서 한 번에.", "tags": ["축제"] }
+    },
+    "summary": "배 위의 마츠리와 불꽃 — 오사카의 한여름 밤.",
+    "highlights": ["후나토교(선박 행렬)", "봉납 하나비", "오사카 텐만구", "도톤보리 미식"],
+    "themes": ["축제", "미식", "도시"],
+    "access": { "how": "도쿄→신오사카 신칸센 2.5h", "hours": 2.5 },
+    "recommendedDays": { "min": 1, "max": 2 },
+    "budgetLevel": 2,
+    "cautions": ["강변 관람석·숙소 조기 마감, 한여름 폭염 대비"],
+    "events": [{ "name": "텐진마츠리", "when": "7/24~25" }]
+  },
+  {
+    "id": "jp-chubu-nagaoka-hanabi",
+    "name": { "ko": "나가오카 불꽃대회", "local": "長岡花火" },
+    "scope": "domestic",
+    "country": "일본",
+    "region": "주부",
+    "bestMonths": [8],
+    "peakMonth": 8,
+    "monthlyReasons": {
+      "8": { "text": "일본 3대 불꽃 나가오카(8/2~3) — 복원 기원의 대명물 '피닉스'가 밤하늘 폭 2km를 덮는다.", "tags": ["축제"] }
+    },
+    "summary": "시나노강 밤하늘을 덮는 일본 3대 불꽃.",
+    "highlights": ["피닉스(초대형 와이드 불꽃)", "쇼산샤쿠다마(정삼척옥)", "강변 관람석"],
+    "themes": ["축제"],
+    "access": { "how": "도쿄→나가오카 신칸센 1.7h", "hours": 2 },
+    "recommendedDays": { "min": 1, "max": 2 },
+    "budgetLevel": 2,
+    "cautions": ["관람석은 추첨·선행 판매 — 수개월 전 확인, 당일 신칸센 대혼잡"],
+    "events": [{ "name": "나가오카 마츠리 대불꽃대회", "when": "8/2~3" }]
+  },
+  {
+    "id": "jp-shikoku-awaodori",
+    "name": { "ko": "도쿠시마 아와오도리", "local": "徳島 阿波おどり" },
+    "scope": "domestic",
+    "country": "일본",
+    "region": "시코쿠",
+    "bestMonths": [8],
+    "peakMonth": 8,
+    "monthlyReasons": {
+      "8": { "text": "400년 전통 아와오도리(8/12~15) — '춤추는 바보에 보는 바보', 도시 전체가 무대가 되는 나흘.", "tags": ["축제"] }
+    },
+    "summary": "도시 전체가 춤춘다 — 여름 나흘간의 아와오도리.",
+    "highlights": ["유료 연무장 관람", "니와카렌(관광객 참가 춤)", "나루토 소용돌이 연계"],
+    "themes": ["축제"],
+    "access": { "how": "하네다→도쿠시마 1.2h", "hours": 2 },
+    "recommendedDays": { "min": 2, "max": 3 },
+    "budgetLevel": 2,
+    "cautions": ["오봉과 겹치는 최성수기 — 항공·숙소 조기 마감"],
+    "events": [{ "name": "아와오도리", "when": "8/12~15" }]
+  },
+  {
+    "id": "jp-tohoku-oirase-towada",
+    "name": { "ko": "오이라세 계류·도와다호", "local": "奥入瀬渓流・十和田湖" },
+    "scope": "domestic",
+    "country": "일본",
+    "region": "도호쿠",
+    "bestMonths": [5, 10],
+    "peakMonth": 10,
+    "monthlyReasons": {
+      "5": { "text": "신록 터널의 계류 산책 — 이끼와 새잎이 가장 푸른 시기.", "tags": ["자연"] },
+      "10": { "text": "계류 단풍의 교과서(10월 중~하순) — 폭포 14곳을 잇는 단풍 회랑.", "tags": ["자연"] }
+    },
+    "summary": "폭포와 이끼의 계류 — 신록과 단풍, 두 번 걷는 길.",
+    "highlights": ["오이라세 계류 트레일(약 14km)", "쵸시오타키 폭포", "도와다호 유람선"],
+    "themes": ["자연", "단풍", "트레킹"],
+    "access": { "how": "도쿄→신아오모리 신칸센 3.2h + 버스 2h", "hours": 5.5 },
+    "recommendedDays": { "min": 2, "max": 3 },
+    "budgetLevel": 2
+  },
+  {
+    "id": "jp-kanto-nasu-shiobara",
+    "name": { "ko": "나스·시오바라", "local": "那須・塩原" },
+    "scope": "domestic",
+    "country": "일본",
+    "region": "간토",
+    "bestMonths": [9, 10],
+    "peakMonth": 10,
+    "monthlyReasons": {
+      "9": { "text": "고원의 초가을 — 도쿄보다 한 발 빠른 가을 공기와 온천.", "tags": ["기후"] },
+      "10": { "text": "나스 로프웨이 단풍(10월 상~중순)부터 시오바라 계곡(중~하순)까지 — 한 달 내내 단풍.", "tags": ["자연"] }
+    },
+    "summary": "황실 별장의 고원 — 로프웨이 단풍과 계곡 온천.",
+    "highlights": ["나스 로프웨이 단풍", "시오바라 계곡 흔들다리", "고원 목장", "온천 순례"],
+    "themes": ["단풍", "온천", "자연"],
+    "access": { "how": "도쿄→나스시오바라 신칸센 1.2h", "hours": 1.5 },
+    "recommendedDays": { "min": 1, "max": 2 },
+    "budgetLevel": 1
+  },
+  {
+    "id": "jp-chubu-karuizawa",
+    "name": { "ko": "가루이자와", "local": "軽井沢" },
+    "scope": "domestic",
+    "country": "일본",
+    "region": "주부",
+    "bestMonths": [7, 8, 10],
+    "peakMonth": 10,
+    "monthlyReasons": {
+      "7": { "text": "표고 1,000m의 피서 별장지 — 도쿄보다 5~7°C 낮은 여름.", "tags": ["기후"] },
+      "8": { "text": "숲 그늘 사이클링과 테라스 카페 — 한여름 피서의 정석.", "tags": ["기후"] },
+      "10": { "text": "구모바이케 연못 단풍(10월 하순)과 낙엽송 황금길 — 가을의 절정.", "tags": ["자연"] }
+    },
+    "summary": "숲과 별장의 고원 마을 — 여름은 피서, 가을은 단풍.",
+    "highlights": ["구모바이케 단풍", "구 가루이자와 긴자", "숲 사이클링", "하루니레 테라스"],
+    "themes": ["피서", "단풍", "자연"],
+    "access": { "how": "도쿄→가루이자와 신칸센 1.1h", "hours": 1.5 },
+    "recommendedDays": { "min": 1, "max": 2 },
+    "budgetLevel": 2
+  },
+  {
+    "id": "jp-chugoku-izumo-matsue",
+    "name": { "ko": "이즈모타이샤·마츠에", "local": "出雲大社・松江" },
+    "scope": "domestic",
+    "country": "일본",
+    "region": "주고쿠",
+    "bestMonths": [11],
+    "peakMonth": 11,
+    "monthlyReasons": {
+      "11": { "text": "음력 10월 '카미아리즈키' — 전국의 신들이 이즈모에 모인다는 달(양력 11월 전후, 카미아리사이). 마츠에성 단풍과 신지호 석양까지.", "tags": ["축제", "자연"] }
+    },
+    "summary": "신들이 모이는 달 — 인연의 신사와 호수의 석양.",
+    "highlights": ["이즈모타이샤", "카미아리사이(음력 10월)", "마츠에성", "신지호 석양"],
+    "themes": ["문화·유적", "자연"],
+    "access": { "how": "하네다→이즈모 1.5h", "hours": 2 },
+    "recommendedDays": { "min": 2, "max": 3 },
+    "budgetLevel": 2,
+    "events": [{ "name": "카미아리사이", "when": "예년 11월 (음력 10월 기준)" }]
+  },
+  {
+    "id": "jp-shikoku-dogo-matsuyama",
+    "name": { "ko": "도고온천·마츠야마", "local": "道後温泉・松山" },
+    "scope": "domestic",
+    "country": "일본",
+    "region": "시코쿠",
+    "bestMonths": [11, 12],
+    "peakMonth": 11,
+    "monthlyReasons": {
+      "11": { "text": "일본 최고(最古) 도고온천 본관과 마츠야마성 단풍 — 온화한 세토우치의 늦가을.", "tags": ["자연"] },
+      "12": { "text": "겨울 온천 + 감귤의 계절 — 세토우치는 한겨울에도 온화.", "tags": ["기후"] }
+    },
+    "summary": "3천 년 온천과 문학의 성하마을 — 세토우치의 느긋한 늦가을.",
+    "highlights": ["도고온천 본관", "마츠야마성", "봇짱 열차", "세토우치 감귤 미식"],
+    "themes": ["온천", "문화·유적"],
+    "access": { "how": "하네다→마츠야마 1.5h", "hours": 2 },
+    "recommendedDays": { "min": 2, "max": 3 },
+    "budgetLevel": 2
+  },
+  {
+    "id": "jp-chubu-kanazawa",
+    "name": { "ko": "가나자와", "local": "金沢" },
+    "scope": "domestic",
+    "country": "일본",
+    "region": "주부",
+    "bestMonths": [4, 11, 12],
+    "peakMonth": 11,
+    "monthlyReasons": {
+      "4": { "text": "겐로쿠엔 벚꽃과 성곽 — 만개 주간의 무료 개원.", "tags": ["자연"] },
+      "11": { "text": "겐로쿠엔 단풍 + 게 해금(11월 상순) — 정원과 미식이 함께 절정.", "tags": ["자연"] },
+      "12": { "text": "유키츠리(눈 대비 밧줄 장식)의 겐로쿠엔 — 눈이 내리면 일본 정원 설경의 정점.", "tags": ["자연"] }
+    },
+    "summary": "정원·성곽·해산물 — 사계절 완성형의 북륙 고도.",
+    "highlights": ["겐로쿠엔(단풍·유키츠리)", "히가시차야 거리", "오미초 시장 해산물", "21세기 미술관"],
+    "themes": ["문화·유적", "미식", "자연"],
+    "access": { "how": "도쿄→가나자와 신칸센 2.5h", "hours": 2.5 },
+    "recommendedDays": { "min": 2, "max": 3 },
+    "budgetLevel": 2
+  },
+  {
+    "id": "jp-kyushu-takachiho",
+    "name": { "ko": "다카치호 협곡", "local": "高千穂峡" },
+    "scope": "domestic",
+    "country": "일본",
+    "region": "규슈",
+    "bestMonths": [5, 10],
+    "peakMonth": 10,
+    "monthlyReasons": {
+      "5": { "text": "신록의 협곡 보트 — 마나이 폭포에 걸리는 초여름 빛.", "tags": ["자연"] },
+      "10": { "text": "협곡 단풍 개막과 요카구라 시즌 준비 — 신화의 고장의 가을.", "tags": ["자연"] }
+    },
+    "summary": "주상절리 협곡과 신화의 밤 — 보트로 폭포 아래까지.",
+    "highlights": ["다카치호 협곡 보트", "마나이 폭포", "아마노이와토 신사", "요카구라(신악)"],
+    "themes": ["자연", "문화·유적"],
+    "access": { "how": "하네다→구마모토 1.8h + 차 2h", "hours": 4.5 },
+    "recommendedDays": { "min": 2, "max": 3 },
+    "budgetLevel": 2,
+    "tips": ["보트는 온라인 사전 예약 — 당일권은 이른 아침 매진"]
   }
 ]

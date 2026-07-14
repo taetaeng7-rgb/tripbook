@@ -1,12 +1,15 @@
 // 엔트리 — 초기화·테마·라우트 바인딩
 import { parseHash, startRouter } from './router.js';
 import { loadAll } from './data.js';
-import { currentMonth, nextMonth, normalizeMonth, picksFor } from './calendar.js';
+import { currentMonth, nextMonth, normalizeMonth, picksFor, candidatesFor } from './calendar.js';
+import { findDestinations, dayBucket, parseThemes, DAY_BUCKETS } from './find.js';
+import { getSet, toggle } from './store.js';
 import * as views from './views.js';
 
 const $app = document.getElementById('app');
 const THEME_KEY = 'tripbook.theme';
 let db = null;
+let lastHash = null;
 
 // ── 테마 (라이트/다크) ──
 function applyTheme(theme) {
@@ -36,6 +39,45 @@ function updateTabs(active) {
   });
 }
 
+// ── 찾기 파라미터 해석 ──
+function parseFindParams(query) {
+  const rawM = query.get('m');
+  const month = rawM === 'any' ? null : (normalizeMonth(rawM) ?? currentMonth());
+  const days = DAY_BUCKETS.some(b => b.key === query.get('d')) ? query.get('d') : 'any';
+  const scope = ['domestic', 'overseas'].includes(query.get('s')) ? query.get('s') : 'all';
+  const themes = parseThemes(query.get('t'));
+  const q = (query.get('q') || '').trim();
+  return { month, days, scope, themes, q };
+}
+
+function runFind(p) {
+  return findDestinations([...db.domestic, ...db.overseas], {
+    month: p.month, days: dayBucket(p.days), themes: p.themes, scope: p.scope, q: p.q,
+  });
+}
+
+// 검색 입력: 타이핑 중엔 결과 영역만 갱신 + URL은 replaceState(히스토리 오염·포커스 손실 방지)
+function bindFindInput(p) {
+  const input = document.getElementById('find-q');
+  if (!input) return;
+  let timer = null;
+  input.addEventListener('input', () => {
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      const next = { ...p, q: input.value.trim() };
+      const results = runFind(next);
+      const box = document.getElementById('find-results');
+      if (box) box.innerHTML = views.findResults(next, results);
+      const url = `#/find?m=${next.month === null ? 'any' : next.month}`
+        + (next.days !== 'any' ? `&d=${next.days}` : '')
+        + (next.scope !== 'all' ? `&s=${next.scope}` : '')
+        + (next.themes.length ? `&t=${encodeURIComponent(next.themes.join(','))}` : '')
+        + (next.q ? `&q=${encodeURIComponent(next.q)}` : '');
+      history.replaceState(null, '', url);
+    }, 250);
+  });
+}
+
 // ── 라우팅 ──
 function render() {
   const { segments, query } = parseHash();
@@ -44,6 +86,7 @@ function render() {
   let html;
   let tab = 'home';
   let title = 'tripbook';
+  let after = null;
 
   if (!head) {
     const picks = picksFor(now, db.calendar, db.byId);
@@ -58,7 +101,13 @@ function render() {
     const m = normalizeMonth(param) ?? now;
     const rawScope = query.get('scope');
     const scope = ['domestic', 'overseas'].includes(rawScope) ? rawScope : 'all';
-    html = views.monthView(m, scope, picksFor(m, db.calendar, db.byId), now);
+    const picks = picksFor(m, db.calendar, db.byId);
+    const curated = new Set([...picks.domestic, ...picks.overseas].map(d => d.id));
+    const extras = {
+      domestic: candidatesFor(m, db.domestic, curated),
+      overseas: candidatesFor(m, db.overseas, curated),
+    };
+    html = views.monthView(m, scope, picks, now, extras);
     tab = 'month';
     title = `tripbook — ${m}월`;
   } else if (head === 'browse') {
@@ -66,6 +115,18 @@ function render() {
     html = views.browse(scope, scope === 'domestic' ? db.domestic : db.overseas);
     tab = scope;
     title = `tripbook — ${scope === 'domestic' ? '국내' : '해외'}`;
+  } else if (head === 'find') {
+    const p = parseFindParams(query);
+    html = views.findView(p, runFind(p));
+    tab = 'find';
+    title = 'tripbook — 조건으로 찾기';
+    after = () => bindFindInput(p);
+  } else if (head === 'list') {
+    const wish = [...getSet('wish')].map(id => db.byId.get(id)).filter(Boolean);
+    const visited = [...getSet('visited')].map(id => db.byId.get(id)).filter(Boolean);
+    html = views.listView(wish, visited);
+    tab = '';
+    title = 'tripbook — 내 목록';
   } else if (head === 'place') {
     const d = db.byId.get(param);
     if (!d) {
@@ -75,7 +136,8 @@ function render() {
       const m = normalizeMonth(query.get('m')) ?? now;
       const picks = picksFor(m, db.calendar, db.byId);
       const others = [...picks.domestic, ...picks.overseas].filter(o => o.id !== d.id);
-      html = views.place(d, m, others);
+      const state = { wish: getSet('wish').has(d.id), visited: getSet('visited').has(d.id) };
+      html = views.place(d, m, others, state);
       tab = d.scope === 'domestic' ? 'domestic' : 'overseas';
       title = `tripbook — ${d.name.ko}`;
     }
@@ -87,7 +149,11 @@ function render() {
   $app.innerHTML = html;
   document.title = title;
   updateTabs(tab);
-  window.scrollTo(0, 0);
+  if (after) after();
+  if (location.hash !== lastHash) { // 위시 토글 등 같은 화면 재렌더 시 스크롤 유지
+    window.scrollTo(0, 0);
+    lastHash = location.hash;
+  }
 }
 
 async function main() {
@@ -100,6 +166,13 @@ async function main() {
     document.getElementById('retry').addEventListener('click', () => location.reload());
     return;
   }
+  // 위시리스트·가봤음 토글 (위임 핸들러)
+  $app.addEventListener('click', e => {
+    const btn = e.target.closest('[data-action]');
+    if (!btn) return;
+    toggle(btn.dataset.action, btn.dataset.id);
+    render();
+  });
   startRouter(render);
 }
 

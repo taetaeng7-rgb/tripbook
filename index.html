@@ -12,7 +12,10 @@
 <body>
   <header class="topbar">
     <a class="brand" href="#/">tripbook <span aria-hidden="true">✈️</span></a>
-    <button id="theme-toggle" class="icon-btn" type="button" aria-label="라이트/다크 전환">🌙</button>
+    <div class="topbar__acts">
+      <a class="icon-btn" href="#/list" aria-label="내 목록(위시리스트)">♥</a>
+      <button id="theme-toggle" class="icon-btn" type="button" aria-label="라이트/다크 전환">🌙</button>
+    </div>
   </header>
 
   <main id="app" class="app">
@@ -28,6 +31,7 @@
     <a data-tab="month" href="#/month"><span aria-hidden="true">📅</span>월별</a>
     <a data-tab="domestic" href="#/browse/domestic"><span aria-hidden="true">🗾</span>국내</a>
     <a data-tab="overseas" href="#/browse/overseas"><span aria-hidden="true">✈️</span>해외</a>
+    <a data-tab="find" href="#/find"><span aria-hidden="true">🔎</span>찾기</a>
   </nav>
 
   <script type="module" src="js/app.js"></script>

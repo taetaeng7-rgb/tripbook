@@ -1,6 +1,7 @@
 // 화면 렌더러 — DOM에 접근하지 않는 순수 문자열 빌더 (node 테스트 가능)
-import { MONTH_LABELS, SCOPES, DOMESTIC_REGIONS, OVERSEAS_REGIONS, THEMES, BUDGET_LABELS } from './config.js';
+import { MONTH_LABELS, SCOPES, DOMESTIC_REGIONS, OVERSEAS_REGIONS, THEMES, BUDGET_LABELS, HOLIDAYS } from './config.js';
 import { isPeak, reasonFor, reasonMonths, nextMonth } from './calendar.js';
+import { DAY_BUCKETS } from './find.js';
 
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => (
   { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]
@@ -24,7 +25,14 @@ function badges(d, month) {
   return html;
 }
 
-// 월 컨텍스트 카드 (홈·월별 뷰)
+// 연휴 스트립 (홈·월별)
+function holidayStrip(month) {
+  const hs = HOLIDAYS[month] || [];
+  if (!hs.length) return `<div class="notice notice--calm">🗓 ${month}월은 공휴일이 없는 달 — 어디를 가도 비교적 한산.</div>`;
+  return hs.map(h => `<div class="notice">🗓 <strong>${esc(h.name)}</strong> (${esc(h.when)}) — ${esc(h.note)}</div>`).join('');
+}
+
+// 월 컨텍스트 카드 (홈·월별·찾기)
 function card(d, month) {
   return `
   <a class="card card--${d.scope}" href="${placeHref(d, month)}">
@@ -85,6 +93,7 @@ export function home(month, picks, nextPicks) {
   return `
   <h1 class="page-title">${MONTH_LABELS[month]}의 여행지</h1>
   <p class="page-sub">지금 가기 좋은 곳 — 국내 3 · 해외 3, 이유와 함께.</p>
+  ${holidayStrip(month)}
   ${scopeSection('domestic', picks.domestic, month)}
   ${scopeSection('overseas', picks.overseas, month)}
   <section class="section">
@@ -93,17 +102,31 @@ export function home(month, picks, nextPicks) {
   </section>`;
 }
 
-// ── 월별 캘린더 ──
-export function monthView(month, scope, picks, now) {
+// ── 월별 캘린더 (큐레이션 3+3 + 그 밖의 후보) ──
+export function monthView(month, scope, picks, now, extras = { domestic: [], overseas: [] }) {
   const seg = s => `<a class="seg${scope === s ? ' seg--active' : ''}" href="#/month/${month}?scope=${s}">${s === 'all' ? '전체' : SCOPES[s].label}</a>`;
   let body = '';
   if (scope === 'all' || scope === 'domestic') body += scopeSection('domestic', picks.domestic, month);
   if (scope === 'all' || scope === 'overseas') body += scopeSection('overseas', picks.overseas, month);
+
+  const extraList = [
+    ...(scope === 'all' || scope === 'domestic' ? extras.domestic : []),
+    ...(scope === 'all' || scope === 'overseas' ? extras.overseas : []),
+  ];
+  const extraHtml = extraList.length
+    ? `<section class="section">
+        <h2 class="section__title">${MONTH_LABELS[month]}의 다른 후보</h2>
+        <div class="minis minis--wrap">${extraList.map(d => miniCard(d, month)).join('')}</div>
+      </section>`
+    : '';
+
   return `
   <h1 class="page-title">월별 여행지</h1>
   ${monthChips(month, now, scope)}
   <div class="segs">${seg('all')}${seg('domestic')}${seg('overseas')}</div>
-  ${body}`;
+  ${holidayStrip(month)}
+  ${body}
+  ${extraHtml}`;
 }
 
 // ── 국내/해외 브라우즈 (지방·권역 그룹) ──
@@ -127,8 +150,71 @@ export function browse(scope, dests) {
   ${groups}`;
 }
 
+// ── 조건으로 찾기 ──
+function findUrl(p, patch = {}) {
+  const v = { ...p, ...patch };
+  const parts = [];
+  parts.push(`m=${v.month === null ? 'any' : v.month}`);
+  if (v.days && v.days !== 'any') parts.push(`d=${v.days}`);
+  if (v.scope && v.scope !== 'all') parts.push(`s=${v.scope}`);
+  if (v.themes && v.themes.length) parts.push(`t=${encodeURIComponent(v.themes.join(','))}`);
+  if (v.q) parts.push(`q=${encodeURIComponent(v.q)}`);
+  return `#/find?${parts.join('&')}`;
+}
+
+export function findResults(p, results) {
+  const cards = results.map(d => (p.month ? card(d, p.month) : browseCard(d))).join('');
+  return `
+  <p class="count">조건에 맞는 여행지 <strong>${results.length}곳</strong></p>
+  ${results.length ? `<div class="cards">${cards}</div>` : '<div class="empty"><p class="empty__emoji" aria-hidden="true">🔎</p><p class="page-sub">조건을 조금 풀어보세요 — 테마를 줄이거나 월을 \'전체\'로.</p></div>'}`;
+}
+
+export function findView(p, results) {
+  const monthChipsHtml = ['<a class="chip' + (p.month === null ? ' chip--active' : '') + `" href="${findUrl(p, { month: null })}">전체</a>`]
+    .concat(Array.from({ length: 12 }, (_, i) => {
+      const m = i + 1;
+      return `<a class="chip${p.month === m ? ' chip--active' : ''}" href="${findUrl(p, { month: m })}">${m}월</a>`;
+    })).join('');
+
+  const dayChips = DAY_BUCKETS.map(b =>
+    `<a class="chip${p.days === b.key ? ' chip--active' : ''}" href="${findUrl(p, { days: b.key })}">${b.label}</a>`
+  ).join('');
+
+  const scopeSegs = ['all', 'domestic', 'overseas'].map(s =>
+    `<a class="seg${p.scope === s ? ' seg--active' : ''}" href="${findUrl(p, { scope: s })}">${s === 'all' ? '전체' : SCOPES[s].label}</a>`
+  ).join('');
+
+  const themeChips = Object.keys(THEMES).map(t => {
+    const on = p.themes.includes(t);
+    const next = on ? p.themes.filter(x => x !== t) : [...p.themes, t];
+    return `<a class="chip${on ? ' chip--on' : ''}" href="${findUrl(p, { themes: next })}">${THEMES[t]} ${esc(t)}</a>`;
+  }).join('');
+
+  return `
+  <h1 class="page-title">🔎 조건으로 찾기</h1>
+  <input id="find-q" class="search-input" type="search" placeholder="이름·나라·테마 검색 (예: 온천, 스위스)" value="${esc(p.q)}" autocomplete="off">
+  <div class="filter-row"><span class="filter-row__label">언제</span><div class="chips">${monthChipsHtml}</div></div>
+  <div class="filter-row"><span class="filter-row__label">며칠</span><div class="chips chips--wrap">${dayChips}</div></div>
+  <div class="filter-row"><span class="filter-row__label">구분</span><div class="segs">${scopeSegs}</div></div>
+  <div class="filter-row"><span class="filter-row__label">테마</span><div class="chips chips--wrap">${themeChips}</div></div>
+  <div id="find-results">${findResults(p, results)}</div>`;
+}
+
+// ── 내 목록 (위시리스트·가봤음) ──
+export function listView(wishDests, visitedDests) {
+  const section = (title, dests, emptyMsg) => `
+  <section class="section">
+    <h2 class="section__title">${title} <span class="count-inline">${dests.length}</span></h2>
+    ${dests.length ? `<div class="cards">${dests.map(browseCard).join('')}</div>` : `<p class="page-sub">${emptyMsg}</p>`}
+  </section>`;
+  return `
+  <h1 class="page-title">내 목록</h1>
+  ${section('♥ 위시리스트', wishDests, '아직 없어요 — 여행지 상세에서 ♡를 눌러 담아두세요.')}
+  ${section('✓ 가봤음', visitedDests, '다녀온 곳을 상세 화면에서 체크하면 여기에 쌓입니다.')}`;
+}
+
 // ── 여행지 상세 ──
-export function place(d, ctxMonth, others) {
+export function place(d, ctxMonth, others, state = { wish: false, visited: false }) {
   const whyItems = reasonMonths(d, ctxMonth).map(m => {
     const r = d.monthlyReasons[String(m)];
     const open = m === ctxMonth ? ' open' : '';
@@ -164,6 +250,11 @@ export function place(d, ctxMonth, others) {
         <span class="badge">${esc(d.country)} · ${esc(d.region)}</span>
         <span class="badge">베스트 ${monthsBadge(d)}</span>
       </div>
+    </div>
+
+    <div class="acts">
+      <button type="button" class="act${state.wish ? ' act--on' : ''}" data-action="wish" data-id="${esc(d.id)}">${state.wish ? '♥ 위시리스트에 있음' : '♡ 위시리스트'}</button>
+      <button type="button" class="act act--visited${state.visited ? ' act--on' : ''}" data-action="visited" data-id="${esc(d.id)}">${state.visited ? '✓ 가봤음' : '가봤음 체크'}</button>
     </div>
 
     <section class="section">

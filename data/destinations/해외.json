@@ -655,5 +655,408 @@
     "budgetLevel": 4,
     "tips": ["마켓 대부분 12/24 전후 종료 — 크리스마스 당일 이후는 한산"],
     "cautions": ["12월 유럽은 16시 전후 일몰 — 야간 마켓 중심 동선이 정답"]
+  },
+  {
+    "id": "vn-hanoi-halong",
+    "name": { "ko": "하노이·하롱베이", "local": "Hà Nội · Hạ Long" },
+    "scope": "overseas",
+    "country": "베트남",
+    "region": "동남아시아",
+    "bestMonths": [10, 11, 12],
+    "peakMonth": 11,
+    "monthlyReasons": {
+      "10": { "text": "북부 우기 종료 — 맑고 건조한 가을 개막.", "tags": ["기후"] },
+      "11": { "text": "하롱베이 크루즈 최적 — 시야 좋고 파도 잔잔한 건기 한복판.", "tags": ["기후"] },
+      "12": { "text": "선선한 건기 계속(15~20°C) — 걷기 좋은 하노이 구시가.", "tags": ["기후"] }
+    },
+    "summary": "석회암 바다의 크루즈 — 가을~초겨울이 북부의 정답.",
+    "highlights": ["하롱베이 1박 크루즈", "하노이 구시가 36거리", "퍼·분짜 미식", "수상인형극"],
+    "themes": ["자연", "미식", "문화·유적"],
+    "access": { "how": "나리타→하노이 직항 6h", "hours": 6 },
+    "recommendedDays": { "min": 4, "max": 5 },
+    "budgetLevel": 2
+  },
+  {
+    "id": "vn-danang-hoian",
+    "name": { "ko": "다낭·호이안", "local": "Đà Nẵng · Hội An" },
+    "scope": "overseas",
+    "country": "베트남",
+    "region": "동남아시아",
+    "bestMonths": [3, 4, 5],
+    "peakMonth": 4,
+    "monthlyReasons": {
+      "3": { "text": "중부 건기 개막 — 바다가 잔잔해지는 시기.", "tags": ["기후"] },
+      "4": { "text": "건기 안정 + 여름 성수기 전 — 미케비치와 등불의 호이안.", "tags": ["기후", "비용·혼잡"] },
+      "5": { "text": "수온 상승으로 해수욕 본격 시작 — 가을 우기(9월~)가 먼 안정기.", "tags": ["기후"] }
+    },
+    "summary": "등불의 옛 항구와 긴 백사장 — 봄이 중부의 건기.",
+    "highlights": ["호이안 올드타운 등불", "미케 비치", "바나힐 골든브릿지", "미선 유적"],
+    "themes": ["바다·리조트", "문화·유적", "미식"],
+    "access": { "how": "나리타→다낭 직항 6h", "hours": 6 },
+    "recommendedDays": { "min": 4, "max": 5 },
+    "budgetLevel": 2
+  },
+  {
+    "id": "sg-singapore",
+    "name": { "ko": "싱가포르", "local": "Singapore" },
+    "scope": "overseas",
+    "country": "싱가포르",
+    "region": "동남아시아",
+    "bestMonths": [2, 3, 9],
+    "peakMonth": 9,
+    "monthlyReasons": {
+      "2": { "text": "북동 몬순 끝물로 강수가 줄어드는 시기 — 춘절 장식의 차이나타운.", "tags": ["기후", "축제"] },
+      "3": { "text": "연중 비교적 건조한 달 — 가든스·동물원 등 야외 일정이 무난.", "tags": ["기후"] },
+      "9": { "text": "F1 싱가포르 그랑프리(예년 9월) — 시가지 나이트 레이스로 도시 전체가 축제.", "tags": ["축제"] }
+    },
+    "summary": "도시국가의 밀도 — 미식·정원·나이트 레이스.",
+    "highlights": ["가든스 바이 더 베이", "호커센터 미식", "마리나베이 야경", "F1 나이트 레이스(9월)"],
+    "themes": ["도시", "미식"],
+    "access": { "how": "하네다→싱가포르 직항 7.5h", "hours": 7.5 },
+    "recommendedDays": { "min": 3, "max": 5 },
+    "budgetLevel": 4,
+    "events": [{ "name": "F1 싱가포르 GP", "when": "예년 9월" }]
+  },
+  {
+    "id": "hk-hongkong-macau",
+    "name": { "ko": "홍콩·마카오", "local": "香港・澳門" },
+    "scope": "overseas",
+    "country": "홍콩·마카오",
+    "region": "동아시아",
+    "bestMonths": [10, 11, 12],
+    "peakMonth": 11,
+    "monthlyReasons": {
+      "10": { "text": "무덥고 습한 여름 종료 — 트램·피크 산책이 쾌적해지는 달.", "tags": ["기후"] },
+      "11": { "text": "연중 최적 — 맑고 건조한 20°C대, 빅토리아 피크 시야 최고 시즌.", "tags": ["기후"] },
+      "12": { "text": "겨울 일루미와 쇼핑 시즌 — 선선하고 쾌적.", "tags": ["기후", "축제"] }
+    },
+    "summary": "야경과 딤섬의 도시 — 가을이 홍콩의 계절.",
+    "highlights": ["빅토리아 피크 야경", "스타페리", "딤섬·완탕면", "마카오 세나도 광장"],
+    "themes": ["도시", "미식"],
+    "access": { "how": "하네다→홍콩 직항 4.5h", "hours": 4.5 },
+    "recommendedDays": { "min": 3, "max": 4 },
+    "budgetLevel": 3
+  },
+  {
+    "id": "my-kotakinabalu",
+    "name": { "ko": "코타키나발루", "local": "Kota Kinabalu" },
+    "scope": "overseas",
+    "country": "말레이시아",
+    "region": "동남아시아",
+    "bestMonths": [2, 3, 4],
+    "peakMonth": 3,
+    "monthlyReasons": {
+      "2": { "text": "건기 시즌 — 잔잔한 바다와 섬 호핑.", "tags": ["기후"] },
+      "3": { "text": "건기 절정 — 세계 3대 석양과 반딧불 투어의 안정기.", "tags": ["기후", "자연"] },
+      "4": { "text": "건기 막바지 — 산호섬 스노클링 호조.", "tags": ["기후", "액티비티"] }
+    },
+    "summary": "세계 3대 석양과 반딧불 — 보르네오의 느긋한 바다.",
+    "highlights": ["탄중아루 석양", "반딧불 리버 크루즈", "섬 호핑(사피·마누칸)", "키나발루산 조망"],
+    "themes": ["바다·리조트", "자연"],
+    "access": { "how": "나리타→코타키나발루 직항 6h", "hours": 6 },
+    "recommendedDays": { "min": 4, "max": 5 },
+    "budgetLevel": 3
+  },
+  {
+    "id": "th-phuket-krabi",
+    "name": { "ko": "푸켓·끄라비", "local": "Phuket · Krabi" },
+    "scope": "overseas",
+    "country": "태국",
+    "region": "동남아시아",
+    "bestMonths": [1, 2, 11, 12],
+    "peakMonth": 1,
+    "monthlyReasons": {
+      "11": { "text": "안다만해 우기 종료 — 건기 개막, 바다 투명도 회복.", "tags": ["기후"] },
+      "12": { "text": "건기 본격 + 연말 성수기 — 요금 급등 전 상순이 노림수.", "tags": ["기후", "비용·혼잡"] },
+      "1": { "text": "건기 한복판 — 피피섬·팡아만 보트 투어 최적.", "tags": ["기후", "액티비티"] },
+      "2": { "text": "건기 계속 — 파도 잔잔, 스노클링 시야 최고.", "tags": ["기후"] }
+    },
+    "summary": "안다만해의 석회암 섬들 — 겨울이 본편인 태국 남부.",
+    "highlights": ["피피섬 투어", "라일레이 비치(끄라비)", "팡아만 카약", "올드 푸켓 타운"],
+    "themes": ["바다·리조트"],
+    "access": { "how": "나리타→푸켓 직항/경유 8h", "hours": 8 },
+    "recommendedDays": { "min": 4, "max": 6 },
+    "budgetLevel": 3
+  },
+  {
+    "id": "lk-srilanka",
+    "name": { "ko": "스리랑카", "local": "Sri Lanka" },
+    "scope": "overseas",
+    "country": "스리랑카",
+    "region": "남아시아·중앙아시아",
+    "bestMonths": [1, 2, 3],
+    "peakMonth": 2,
+    "monthlyReasons": {
+      "1": { "text": "서·남부 건기 — 시기리야 등 문화 삼각지대와 남부 해변이 모두 호조.", "tags": ["기후"] },
+      "2": { "text": "건기 절정 — 미리사 고래 관찰과 홍차 고원 열차의 최적기.", "tags": ["기후", "자연"] },
+      "3": { "text": "건기 막바지 — 더위가 오르기 전 유적 순례의 마지노선.", "tags": ["기후"] }
+    },
+    "summary": "홍차 고원과 고대 유적 — 인도양의 눈물 한 바퀴.",
+    "highlights": ["시기리야 록", "캔디→엘라 고원 열차", "미리사 고래 관찰", "갈레 요새"],
+    "themes": ["문화·유적", "자연"],
+    "access": { "how": "나리타→콜롬보 직항 9h", "hours": 9 },
+    "recommendedDays": { "min": 6, "max": 8 },
+    "budgetLevel": 3
+  },
+  {
+    "id": "uz-samarkand",
+    "name": { "ko": "사마르칸트·부하라", "local": "Samarkand · Bukhara" },
+    "scope": "overseas",
+    "country": "우즈베키스탄",
+    "region": "남아시아·중앙아시아",
+    "bestMonths": [4, 5, 10],
+    "peakMonth": 5,
+    "monthlyReasons": {
+      "4": { "text": "봄 시즌 개막 — 여름 40°C 전의 쾌적한 유적 순례.", "tags": ["기후"] },
+      "5": { "text": "레기스탄의 푸른 돔이 가장 빛나는 계절 — 실크로드의 봄.", "tags": ["기후"] },
+      "10": { "text": "더위가 꺾인 가을 — 실크로드 도시 산책의 두 번째 적기.", "tags": ["기후"] }
+    },
+    "summary": "레기스탄의 푸른 돔 — 실크로드의 심장.",
+    "highlights": ["레기스탄 광장", "샤히진다 영묘군", "부하라 올드시티", "플로프 미식"],
+    "themes": ["문화·유적"],
+    "access": { "how": "나리타→타슈켄트 직항 9h + 고속철", "hours": 11 },
+    "recommendedDays": { "min": 5, "max": 7 },
+    "budgetLevel": 3
+  },
+  {
+    "id": "ma-marrakech-sahara",
+    "name": { "ko": "마라케시·사하라", "local": "Marrakech · Sahara" },
+    "scope": "overseas",
+    "country": "모로코",
+    "region": "중동·아프리카",
+    "bestMonths": [3, 4, 11],
+    "peakMonth": 4,
+    "monthlyReasons": {
+      "3": { "text": "봄 개막 — 더위 전의 메디나 산책과 사막 투어.", "tags": ["기후"] },
+      "4": { "text": "사하라 1박 투어 최적 — 별밤과 일교차가 감당 가능한 시기.", "tags": ["기후", "액티비티"] },
+      "11": { "text": "여름 혹서가 완전히 끝난 가을 — 두 번째 베스트.", "tags": ["기후"] }
+    },
+    "summary": "메디나의 미로와 사하라의 별밤 — 봄·가을의 모로코.",
+    "highlights": ["제마 엘프나 광장", "사하라 1박 투어(메르주가)", "마조렐 정원", "아이트벤하두"],
+    "themes": ["문화·유적", "자연"],
+    "access": { "how": "경유 18h+", "hours": 18 },
+    "recommendedDays": { "min": 7, "max": 9 },
+    "budgetLevel": 4
+  },
+  {
+    "id": "jo-petra-wadirum",
+    "name": { "ko": "페트라·와디럼", "local": "Petra · Wadi Rum" },
+    "scope": "overseas",
+    "country": "요르단",
+    "region": "중동·아프리카",
+    "bestMonths": [3, 4, 11],
+    "peakMonth": 11,
+    "monthlyReasons": {
+      "3": { "text": "봄 시즌 — 낮 20°C대의 유적 트레킹.", "tags": ["기후"] },
+      "4": { "text": "봄 계속 — 와디럼 사막 캠프의 쾌적기.", "tags": ["기후"] },
+      "11": { "text": "여름 더위 종료 후 가장 안정된 달 — 하루 1만 보 걷는 페트라의 최적기.", "tags": ["기후", "액티비티"] }
+    },
+    "summary": "장밋빛 바위 도시와 화성 같은 사막 — 요르단 2대 비경.",
+    "highlights": ["페트라 알카즈네", "수도원(몬스터리) 트레킹", "와디럼 지프 투어·캠프", "사해 부유"],
+    "themes": ["문화·유적", "자연"],
+    "access": { "how": "경유 16h+", "hours": 16 },
+    "recommendedDays": { "min": 6, "max": 8 },
+    "budgetLevel": 4
+  },
+  {
+    "id": "tr-istanbul",
+    "name": { "ko": "이스탄불", "local": "İstanbul" },
+    "scope": "overseas",
+    "country": "튀르키예",
+    "region": "유럽",
+    "bestMonths": [4, 5, 10],
+    "peakMonth": 5,
+    "monthlyReasons": {
+      "4": { "text": "튤립 축제의 봄 — 에미르간 공원과 온화한 관광 개막.", "tags": ["기후", "축제"] },
+      "5": { "text": "보스포루스 크루즈 최적 — 해 길고 상쾌한 초여름.", "tags": ["기후"] },
+      "10": { "text": "여름 인파가 빠진 가을 — 모스크·바자르 도보의 두 번째 적기.", "tags": ["기후", "비용·혼잡"] }
+    },
+    "summary": "두 대륙의 도시 — 모스크와 해협 사이의 봄가을.",
+    "highlights": ["아야소피아·블루모스크", "보스포루스 크루즈", "그랜드 바자르", "카파도키아 연계"],
+    "themes": ["문화·유적", "도시"],
+    "access": { "how": "나리타→이스탄불 직항 13h", "hours": 13 },
+    "recommendedDays": { "min": 5, "max": 7 },
+    "budgetLevel": 4
+  },
+  {
+    "id": "fr-paris",
+    "name": { "ko": "파리", "local": "Paris" },
+    "scope": "overseas",
+    "country": "프랑스",
+    "region": "유럽",
+    "bestMonths": [4, 5, 9],
+    "peakMonth": 5,
+    "monthlyReasons": {
+      "4": { "text": "마로니에 꽃 피는 봄의 개막 — 테라스의 계절 시작.", "tags": ["기후"] },
+      "5": { "text": "해가 21시까지 — 센강변·정원 산책의 최적기, 여름 인파 전.", "tags": ["기후", "비용·혼잡"] },
+      "9": { "text": "바캉스 인파가 빠진 초가을 — 미술관 순례의 계절.", "tags": ["기후", "비용·혼잡"] }
+    },
+    "summary": "봄과 초가을의 센강 — 테라스와 미술관의 도시.",
+    "highlights": ["루브르·오르세", "센강변 산책", "몽마르트르", "베르사유 당일"],
+    "themes": ["도시", "미식", "문화·유적"],
+    "access": { "how": "하네다→파리 직항 14h", "hours": 14 },
+    "recommendedDays": { "min": 5, "max": 7 },
+    "budgetLevel": 4
+  },
+  {
+    "id": "cz-hu-prague-budapest",
+    "name": { "ko": "프라하·부다페스트", "local": "Praha · Budapest" },
+    "scope": "overseas",
+    "country": "체코·헝가리",
+    "region": "유럽",
+    "bestMonths": [5, 10, 12],
+    "peakMonth": 10,
+    "monthlyReasons": {
+      "5": { "text": "봄의 구시가 — '프라하의 봄' 음악제 개막과 야외 카페.", "tags": ["기후", "축제"] },
+      "10": { "text": "가을빛 구시가 절정 — 블타바·도나우 강변이 황금색으로.", "tags": ["자연", "기후"] },
+      "12": { "text": "크리스마스 마켓 — 구시가 광장과 온천(부다페스트)의 겨울.", "tags": ["축제"] }
+    },
+    "summary": "동유럽 2대 고도 — 가을의 강변과 겨울의 마켓.",
+    "highlights": ["프라하성·카를교", "부다페스트 국회의사당 야경", "세체니 온천", "구시가 광장 마켓(12월)"],
+    "themes": ["도시", "문화·유적", "온천"],
+    "access": { "how": "경유 15h", "hours": 15 },
+    "recommendedDays": { "min": 6, "max": 8 },
+    "budgetLevel": 4
+  },
+  {
+    "id": "hr-dubrovnik-split",
+    "name": { "ko": "두브로브니크·스플리트", "local": "Dubrovnik · Split" },
+    "scope": "overseas",
+    "country": "크로아티아",
+    "region": "유럽",
+    "bestMonths": [5, 6, 9],
+    "peakMonth": 9,
+    "monthlyReasons": {
+      "5": { "text": "수영 시즌 개막 전의 한산한 성벽 걷기.", "tags": ["비용·혼잡", "기후"] },
+      "6": { "text": "아드리아해 수영 시작 — 7~8월 크루즈 인파 전 마지막 여유.", "tags": ["기후", "비용·혼잡"] },
+      "9": { "text": "수온 최고 + 인파 급감 — 성벽·케이블카·섬 호핑의 균형점.", "tags": ["기후", "비용·혼잡"] }
+    },
+    "summary": "아드리아해의 진주 — 어깨철의 성벽 도시.",
+    "highlights": ["성벽 일주 워크", "스르지산 케이블카", "로크룸섬", "디오클레티아누스 궁전(스플리트)"],
+    "themes": ["바다·리조트", "문화·유적"],
+    "access": { "how": "경유 16h", "hours": 16 },
+    "recommendedDays": { "min": 6, "max": 8 },
+    "budgetLevel": 4
+  },
+  {
+    "id": "gb-london",
+    "name": { "ko": "런던", "local": "London" },
+    "scope": "overseas",
+    "country": "영국",
+    "region": "유럽",
+    "bestMonths": [6, 7, 12],
+    "peakMonth": 6,
+    "monthlyReasons": {
+      "6": { "text": "해가 21시 넘어까지 — 공원과 펍 테라스, 여름 시즌의 개막.", "tags": ["기후"] },
+      "7": { "text": "윔블던과 야외 공연의 한여름 — 그래도 낮 25°C 안팎.", "tags": ["기후", "축제"] },
+      "12": { "text": "홀리데이 시즌 — 크리스마스 라이트와 윈터 원더랜드.", "tags": ["축제"] }
+    },
+    "summary": "박물관과 공원의 도시 — 긴 초여름 해와 홀리데이의 겨울.",
+    "highlights": ["대영박물관", "웨스트엔드 뮤지컬", "노팅힐·버로우 마켓", "크리스마스 라이트(12월)"],
+    "themes": ["도시", "문화·유적"],
+    "access": { "how": "하네다→런던 직항 14.5h", "hours": 14.5 },
+    "recommendedDays": { "min": 5, "max": 7 },
+    "budgetLevel": 4
+  },
+  {
+    "id": "is-iceland",
+    "name": { "ko": "아이슬란드", "local": "Iceland" },
+    "scope": "overseas",
+    "country": "아이슬란드",
+    "region": "유럽",
+    "bestMonths": [2, 7, 8],
+    "peakMonth": 7,
+    "monthlyReasons": {
+      "2": { "text": "오로라 + 빙하 동굴(11~3월 한정) — 겨울 아이슬란드의 본편.", "tags": ["자연", "액티비티"] },
+      "7": { "text": "백야의 링로드 — 폭포·빙하호를 하루 종일 도는 여름의 절정.", "tags": ["기후", "자연"] },
+      "8": { "text": "여름 계속 + 퍼핀 관찰 막바지 — 하이랜드 도로 개통기.", "tags": ["자연", "액티비티"] }
+    },
+    "summary": "얼음과 불의 링로드 — 여름의 백야, 겨울의 오로라.",
+    "highlights": ["골든서클", "요쿨살론 빙하호", "빙하 동굴(겨울)", "블루라군"],
+    "themes": ["자연", "오로라", "드라이브"],
+    "access": { "how": "경유 17h", "hours": 17 },
+    "recommendedDays": { "min": 7, "max": 10 },
+    "budgetLevel": 5,
+    "cautions": ["겨울 렌터카는 강풍·빙판 리스크 — 투어 이용 권장"]
+  },
+  {
+    "id": "ca-maple-road",
+    "name": { "ko": "캐나다 동부 메이플로드", "local": "Maple Road (Québec · Ontario)" },
+    "scope": "overseas",
+    "country": "캐나다",
+    "region": "아메리카",
+    "bestMonths": [9, 10],
+    "peakMonth": 10,
+    "monthlyReasons": {
+      "9": { "text": "9월 하순 로렌시안 고원부터 단풍 개막 — 북쪽에서 남하.", "tags": ["자연"] },
+      "10": { "text": "메이플 가도 절정(10월 상~중순) — 몬트리올~퀘벡 로드트립의 골든위크.", "tags": ["자연"] }
+    },
+    "summary": "단풍의 나라 — 메이플 가도 800km.",
+    "highlights": ["로렌시안 고원 단풍", "퀘벡 구시가", "몽트랑블랑", "메이플 시럽 미식"],
+    "themes": ["단풍", "드라이브", "도시"],
+    "access": { "how": "하네다→토론토/몬트리올 직항 12h", "hours": 13 },
+    "recommendedDays": { "min": 6, "max": 8 },
+    "budgetLevel": 4
+  },
+  {
+    "id": "us-newyork",
+    "name": { "ko": "뉴욕", "local": "New York" },
+    "scope": "overseas",
+    "country": "미국",
+    "region": "아메리카",
+    "bestMonths": [9, 10, 12],
+    "peakMonth": 10,
+    "monthlyReasons": {
+      "9": { "text": "늦여름의 야외 — US오픈과 루프탑의 계절.", "tags": ["기후", "축제"] },
+      "10": { "text": "센트럴파크 단풍과 걷기 최적 기온 — 뉴욕이 가장 뉴욕다운 달.", "tags": ["기후", "자연"] },
+      "12": { "text": "록펠러 트리와 홀리데이 윈도 — 축제의 도시, 다만 요금은 연중 최고.", "tags": ["축제", "비용·혼잡"] }
+    },
+    "summary": "가을의 센트럴파크, 겨울의 록펠러 — 계절이 곧 콘텐츠인 도시.",
+    "highlights": ["센트럴파크", "브로드웨이", "메트로폴리탄 미술관", "록펠러 트리(12월)"],
+    "themes": ["도시", "미식", "문화·유적"],
+    "access": { "how": "하네다→뉴욕 직항 13h", "hours": 13 },
+    "recommendedDays": { "min": 5, "max": 7 },
+    "budgetLevel": 5
+  },
+  {
+    "id": "pe-machupicchu",
+    "name": { "ko": "마추픽추·쿠스코", "local": "Machu Picchu · Cusco" },
+    "scope": "overseas",
+    "country": "페루",
+    "region": "아메리카",
+    "bestMonths": [6, 7, 8],
+    "peakMonth": 7,
+    "monthlyReasons": {
+      "6": { "text": "건기 개막 — 안데스 하늘이 맑아지는 시기, 6월 하순 인티라이미(태양제).", "tags": ["기후", "축제"] },
+      "7": { "text": "건기 절정 — 마추픽추 조망 확률 최고, 잉카 트레일도 최적.", "tags": ["기후", "액티비티"] },
+      "8": { "text": "건기 계속 — 성수기 인파는 이른 아침 입장으로 회피.", "tags": ["기후", "비용·혼잡"] }
+    },
+    "summary": "공중 도시와 안데스 — 건기의 남미 하이라이트.",
+    "highlights": ["마추픽추", "쿠스코 구시가", "성스러운 계곡", "비니쿤카(무지개산)"],
+    "themes": ["문화·유적", "산악"],
+    "access": { "how": "경유 22h+", "hours": 22 },
+    "recommendedDays": { "min": 8, "max": 10 },
+    "budgetLevel": 5,
+    "cautions": ["쿠스코는 3,400m 고산 — 도착 후 고도 적응 일정 필수", "마추픽추 입장권·열차 사전 예약제"]
+  },
+  {
+    "id": "au-cairns-gbr",
+    "name": { "ko": "케언즈·그레이트배리어리프", "local": "Cairns · Great Barrier Reef" },
+    "scope": "overseas",
+    "country": "호주",
+    "region": "오세아니아·태평양",
+    "bestMonths": [7, 8, 9],
+    "peakMonth": 8,
+    "monthlyReasons": {
+      "7": { "text": "호주 북부 건기(5~10월) — 습도 낮고 바다 잔잔, 독성 해파리 시즌 밖.", "tags": ["기후"] },
+      "8": { "text": "그레이트배리어리프 시야 최고 시즌 — 현지는 겨울이지만 낮 26°C.", "tags": ["기후", "액티비티"] },
+      "9": { "text": "건기 계속 + 고래 시즌 막바지 — 일본 여름휴가와 궁합.", "tags": ["기후", "자연"] }
+    },
+    "summary": "세계 최대 산호초 — 일본의 여름이 이곳의 건기.",
+    "highlights": ["GBR 스노클링·다이빙 크루즈", "쿠란다 열대우림 열차", "그린섬", "열기구"],
+    "themes": ["바다·리조트", "자연"],
+    "access": { "how": "나리타→케언즈 직항 7.5h", "hours": 7.5 },
+    "recommendedDays": { "min": 4, "max": 6 },
+    "budgetLevel": 4
   }
 ]

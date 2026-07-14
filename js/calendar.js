@@ -31,6 +31,13 @@ export function reasonFor(dest, month) {
   return r && r.text ? r.text : dest.summary;
 }
 
+// 큐레이션(3+3) 밖에서 bestMonths로 도출하는 "이 달의 다른 후보" — 절정 우선, 가까운 순
+export function candidatesFor(month, all, excludeIds) {
+  return all
+    .filter(d => (d.bestMonths || []).includes(month) && !excludeIds.has(d.id))
+    .sort((a, b) => ((b.peakMonth === month) - (a.peakMonth === month)) || a.access.hours - b.access.hours);
+}
+
 // "왜 이 달인가" 섹션용: 이유가 있는 월 목록 (컨텍스트 월 우선, 나머지 오름차순)
 export function reasonMonths(dest, ctxMonth) {
   const months = Object.keys(dest.monthlyReasons || {}).map(Number).sort((a, b) => a - b);
