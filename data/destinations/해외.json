@@ -1058,5 +1058,308 @@
     "access": { "how": "나리타→케언즈 직항 7.5h", "hours": 7.5 },
     "recommendedDays": { "min": 4, "max": 6 },
     "budgetLevel": 4
+  },
+  {
+    "id": "kr-busan",
+    "name": { "ko": "부산", "local": "Busan" },
+    "scope": "overseas",
+    "country": "한국",
+    "region": "한국",
+    "bestMonths": [5, 10],
+    "peakMonth": 10,
+    "monthlyReasons": {
+      "5": { "text": "초여름 바다와 온화한 날씨 — 해운대·광안리 산책과 회 미식.", "tags": ["기후"] },
+      "10": { "text": "부산국제영화제(예년 10월)와 가을 바다 — 전어·대하의 계절.", "tags": ["축제", "기후"] }
+    },
+    "summary": "가장 가까운 바다 도시 — 시장 미식과 해변 산책.",
+    "highlights": ["해운대·광안리", "감천문화마을", "자갈치시장", "부산국제영화제(10월)"],
+    "themes": ["도시", "미식", "바다·리조트"],
+    "access": { "how": "하네다→김해 직항 2h", "hours": 2 },
+    "recommendedDays": { "min": 2, "max": 3 },
+    "budgetLevel": 2,
+    "events": [{ "name": "부산국제영화제", "when": "예년 10월" }]
+  },
+  {
+    "id": "cn-shanghai-suzhou",
+    "name": { "ko": "상하이·쑤저우", "local": "上海・蘇州" },
+    "scope": "overseas",
+    "country": "중국",
+    "region": "동아시아",
+    "bestMonths": [4, 5, 11],
+    "peakMonth": 5,
+    "monthlyReasons": {
+      "4": { "text": "봄의 정원 도시 — 쑤저우 원림에 꽃이 도는 시기.", "tags": ["기후", "자연"] },
+      "5": { "text": "와이탄 산책 최적의 초여름 — 장마(6월)와 혹서 전.", "tags": ["기후"] },
+      "11": { "text": "가을빛 원림과 상하이게(따자셰) 제철 — 미식의 계절.", "tags": ["기후"] }
+    },
+    "summary": "마천루와 원림 — 두 시대를 오가는 주말 여행.",
+    "highlights": ["와이탄 야경", "쑤저우 원림(졸정원)", "예원·프랑스 조계", "샤오롱바오 미식"],
+    "themes": ["도시", "미식", "문화·유적"],
+    "access": { "how": "하네다→상하이 직항 3h", "hours": 3 },
+    "recommendedDays": { "min": 3, "max": 4 },
+    "budgetLevel": 3
+  },
+  {
+    "id": "la-luangprabang",
+    "name": { "ko": "루앙프라방", "local": "Luang Prabang" },
+    "scope": "overseas",
+    "country": "라오스",
+    "region": "동남아시아",
+    "bestMonths": [1, 11, 12],
+    "peakMonth": 12,
+    "monthlyReasons": {
+      "11": { "text": "우기 종료 — 꽝시 폭포 수량은 남고 물빛은 옥색으로 돌아오는 달.", "tags": ["기후", "자연"] },
+      "12": { "text": "건기의 서늘한 아침 탁발 행렬 — 여행 최적기.", "tags": ["기후"] },
+      "1": { "text": "건기 계속 — 아침 안개의 메콩과 야시장.", "tags": ["기후"] }
+    },
+    "summary": "메콩의 고도 — 아침 탁발과 옥색 폭포.",
+    "highlights": ["새벽 탁발 행렬", "꽝시 폭포", "푸시산 석양", "야시장"],
+    "themes": ["문화·유적", "자연"],
+    "access": { "how": "경유 9h", "hours": 9 },
+    "recommendedDays": { "min": 4, "max": 5 },
+    "budgetLevel": 2
+  },
+  {
+    "id": "ph-elnido-palawan",
+    "name": { "ko": "엘니도(팔라완)", "local": "El Nido, Palawan" },
+    "scope": "overseas",
+    "country": "필리핀",
+    "region": "동남아시아",
+    "bestMonths": [1, 2, 3],
+    "peakMonth": 2,
+    "monthlyReasons": {
+      "1": { "text": "건기 개막 후 안정 — 라군 보트 투어 최적.", "tags": ["기후"] },
+      "2": { "text": "건기 절정 — 빅·스몰 라군의 투명도 최고.", "tags": ["기후", "액티비티"] },
+      "3": { "text": "건기 계속 — 성수기 인파가 살짝 빠지는 달.", "tags": ["기후", "비용·혼잡"] }
+    },
+    "summary": "카르스트 절벽의 라군 — 필리핀 최후의 프런티어.",
+    "highlights": ["빅 라군·스몰 라군", "아일랜드 호핑 투어", "나크판 비치", "스노클링"],
+    "themes": ["바다·리조트", "자연"],
+    "access": { "how": "마닐라 경유 8h+", "hours": 9 },
+    "recommendedDays": { "min": 5, "max": 6 },
+    "budgetLevel": 3
+  },
+  {
+    "id": "au-melbourne",
+    "name": { "ko": "멜버른", "local": "Melbourne" },
+    "scope": "overseas",
+    "country": "호주",
+    "region": "오세아니아·태평양",
+    "bestMonths": [1, 2, 12],
+    "peakMonth": 1,
+    "monthlyReasons": {
+      "1": { "text": "호주오픈(예년 1월)과 남반구 한여름 — 커피의 도시가 가장 활기찬 달.", "tags": ["축제", "기후"] },
+      "2": { "text": "늦여름 안정기 — 그레이트오션로드 로드트립 최적.", "tags": ["기후"] },
+      "12": { "text": "한여름 크리스마스 — 야외 시네마와 골목 바의 계절.", "tags": ["기후", "축제"] }
+    },
+    "summary": "커피와 골목의 도시 — 1월엔 테니스, 여름엔 대양도로.",
+    "highlights": ["호주오픈(1월)", "그레이트오션로드", "골목 카페 투어", "필립섬 펭귄 퍼레이드"],
+    "themes": ["도시", "미식", "드라이브"],
+    "access": { "how": "나리타→멜버른 직항 10.5h", "hours": 10.5 },
+    "recommendedDays": { "min": 5, "max": 7 },
+    "budgetLevel": 4,
+    "events": [{ "name": "호주오픈", "when": "예년 1월" }]
+  },
+  {
+    "id": "mp-saipan",
+    "name": { "ko": "사이판", "local": "Saipan" },
+    "scope": "overseas",
+    "country": "미국(북마리아나)",
+    "region": "오세아니아·태평양",
+    "bestMonths": [1, 2, 12],
+    "peakMonth": 1,
+    "monthlyReasons": {
+      "12": { "text": "건기 개막 — 연말 성수기 전 상순이 요금 노림수.", "tags": ["기후", "비용·혼잡"] },
+      "1": { "text": "건기 한복판 — 마나가하섬의 투명한 바다, 도쿄에서 3시간대의 한여름.", "tags": ["기후"] },
+      "2": { "text": "건기 계속 — 파도 잔잔한 스노클링 시즌.", "tags": ["기후"] }
+    },
+    "summary": "3시간 반의 상하(常夏) — 마나가하섬의 옥빛 바다.",
+    "highlights": ["마나가하섬", "그로토 다이빙", "마이크로 비치", "타포차우산 전망"],
+    "themes": ["바다·리조트"],
+    "access": { "how": "직항 3.5h(운항 시기 확인)/괌 경유", "hours": 4 },
+    "recommendedDays": { "min": 3, "max": 4 },
+    "budgetLevel": 3,
+    "cautions": ["직항이 계절 운항인 시기가 있음 — 스케줄 사전 확인"]
+  },
+  {
+    "id": "fr-nice-provence",
+    "name": { "ko": "니스·프로방스", "local": "Nice · Provence" },
+    "scope": "overseas",
+    "country": "프랑스",
+    "region": "유럽",
+    "bestMonths": [6, 7],
+    "peakMonth": 7,
+    "monthlyReasons": {
+      "6": { "text": "코트다쥐르 초여름 — 바캉스 피크 전의 니스 해변.", "tags": ["기후", "비용·혼잡"] },
+      "7": { "text": "발랑솔 라벤더 절정(예년 6월 하순~7월 중순) — 보랏빛 언덕과 지중해를 한 번에.", "tags": ["자연"] }
+    },
+    "summary": "라벤더와 쪽빛 해안 — 남프랑스의 한여름.",
+    "highlights": ["발랑솔 라벤더밭", "니스 프롬나드 데 장글레", "에즈·모나코 근교", "고르드·루시용 마을"],
+    "themes": ["자연", "바다·리조트", "미식"],
+    "access": { "how": "파리 경유 16h", "hours": 16 },
+    "recommendedDays": { "min": 6, "max": 8 },
+    "budgetLevel": 4,
+    "tips": ["라벤더는 수확 시기(7월 중순 이후)를 넘기면 끝 — 상순까지가 안전"]
+  },
+  {
+    "id": "si-bled-ljubljana",
+    "name": { "ko": "블레드·류블랴나", "local": "Bled · Ljubljana" },
+    "scope": "overseas",
+    "country": "슬로베니아",
+    "region": "유럽",
+    "bestMonths": [5, 6, 9],
+    "peakMonth": 6,
+    "monthlyReasons": {
+      "5": { "text": "호수의 봄 — 신록의 블레드성과 보트.", "tags": ["기후", "자연"] },
+      "6": { "text": "에메랄드 호수의 초여름 절정 — 수영 가능 + 긴 해.", "tags": ["기후", "자연"] },
+      "9": { "text": "가을빛 호수와 한산함 — 어깨철의 보석.", "tags": ["기후", "비용·혼잡"] }
+    },
+    "summary": "동화 속 호수 섬 — 유럽의 숨은 보석.",
+    "highlights": ["블레드 호수 보트·성", "빈트가르 협곡", "류블랴나 구시가", "크림케이크"],
+    "themes": ["자연", "도시"],
+    "access": { "how": "경유 16h", "hours": 16 },
+    "recommendedDays": { "min": 5, "max": 7 },
+    "budgetLevel": 4
+  },
+  {
+    "id": "no-fjord-norway",
+    "name": { "ko": "노르웨이 피오르", "local": "Norwegian Fjords" },
+    "scope": "overseas",
+    "country": "노르웨이",
+    "region": "유럽",
+    "bestMonths": [6, 7, 8],
+    "peakMonth": 7,
+    "monthlyReasons": {
+      "6": { "text": "백야 개막 — 플롬 산악열차와 피오르 크루즈의 시작.", "tags": ["기후", "자연"] },
+      "7": { "text": "게이랑에르·네뢰이피오르 절정 — 폭포 수량 많고 해가 길다.", "tags": ["자연"] },
+      "8": { "text": "여름 계속 — 트롤퉁가·프레케스톨렌 하이킹 안정기.", "tags": ["액티비티", "자연"] }
+    },
+    "summary": "빙하가 깎은 바다 — 백야의 피오르 크루즈.",
+    "highlights": ["게이랑에르피오르 크루즈", "플롬 산악열차", "프레케스톨렌 하이킹", "베르겐 브뤼겐"],
+    "themes": ["자연", "트레킹", "드라이브"],
+    "access": { "how": "경유 15h", "hours": 15 },
+    "recommendedDays": { "min": 6, "max": 8 },
+    "budgetLevel": 5
+  },
+  {
+    "id": "za-capetown",
+    "name": { "ko": "케이프타운", "local": "Cape Town" },
+    "scope": "overseas",
+    "country": "남아프리카공화국",
+    "region": "중동·아프리카",
+    "bestMonths": [1, 2, 12],
+    "peakMonth": 2,
+    "monthlyReasons": {
+      "12": { "text": "남반구 한여름 개막 — 테이블마운틴과 해변의 계절.", "tags": ["기후"] },
+      "1": { "text": "여름 건기 — 와이너리와 채프먼스피크 드라이브 최적.", "tags": ["기후"] },
+      "2": { "text": "늦여름 안정기 — 바람이 잦아들어 테이블마운틴 케이블웨이 운행률 최고.", "tags": ["기후"] }
+    },
+    "summary": "테이블마운틴 아래 두 대양 — 남반구 여름의 종착지.",
+    "highlights": ["테이블마운틴", "희망봉·채프먼스피크", "볼더스비치 펭귄", "스텔렌보스 와이너리"],
+    "themes": ["자연", "도시", "드라이브"],
+    "access": { "how": "경유 20h+", "hours": 20 },
+    "recommendedDays": { "min": 7, "max": 9 },
+    "budgetLevel": 5
+  },
+  {
+    "id": "bo-uyuni",
+    "name": { "ko": "우유니 소금사막", "local": "Salar de Uyuni" },
+    "scope": "overseas",
+    "country": "볼리비아",
+    "region": "아메리카",
+    "bestMonths": [1, 2, 12],
+    "peakMonth": 1,
+    "monthlyReasons": {
+      "12": { "text": "우기 초입 — '하늘 거울' 반영이 시작되는 달.", "tags": ["자연"] },
+      "1": { "text": "우기 한복판 — 거울 우유니의 절정, 일몰·별 반영 투어.", "tags": ["자연"] },
+      "2": { "text": "반영 계속 — 남미 카니발 시즌과 겹치는 여름.", "tags": ["자연", "축제"] }
+    },
+    "summary": "하늘을 걷는 거울 — 우기에만 열리는 풍경.",
+    "highlights": ["거울 반영 일몰·별 투어", "소금 호텔", "기차 무덤", "콜차니 소금 마을"],
+    "themes": ["자연"],
+    "access": { "how": "경유 30h+", "hours": 30 },
+    "recommendedDays": { "min": 8, "max": 10 },
+    "budgetLevel": 5,
+    "cautions": ["해발 3,700m — 고산 적응 일정 필수", "우기엔 이동 지연 대비 여유 일정"]
+  },
+  {
+    "id": "ca-yellowknife",
+    "name": { "ko": "옐로나이프", "local": "Yellowknife" },
+    "scope": "overseas",
+    "country": "캐나다",
+    "region": "아메리카",
+    "bestMonths": [2, 3, 9],
+    "peakMonth": 3,
+    "monthlyReasons": {
+      "2": { "text": "오로라 벨트 바로 아래의 한겨울 — 관측 확률 세계 최고 수준, 단 -25°C 방한.", "tags": ["자연"] },
+      "3": { "text": "낮이 길어지고 추위가 풀리는 시즌 막바지 — 확률과 체감의 균형점.", "tags": ["자연", "기후"] },
+      "9": { "text": "가을 오로라 — 호수 반영과 함께, 방한 부담 없는 시즌.", "tags": ["자연", "기후"] }
+    },
+    "summary": "오로라 확률 세계 최고 — 3박이면 만난다는 도시.",
+    "highlights": ["오로라 빌리지", "가을 호수 반영 오로라", "개썰매·스노모빌(겨울)", "선상 오로라(가을)"],
+    "themes": ["오로라", "자연", "설경"],
+    "access": { "how": "밴쿠버 경유 13h+", "hours": 14 },
+    "recommendedDays": { "min": 4, "max": 6 },
+    "budgetLevel": 5,
+    "tips": ["통계상 3박 이상 체류 시 관측 확률 90%대 — 일정은 3박 이상으로"]
+  },
+  {
+    "id": "ge-tbilisi-kazbegi",
+    "name": { "ko": "트빌리시·카즈베기", "local": "Tbilisi · Kazbegi" },
+    "scope": "overseas",
+    "country": "조지아",
+    "region": "유럽",
+    "bestMonths": [6, 9],
+    "peakMonth": 9,
+    "monthlyReasons": {
+      "6": { "text": "코카서스 초여름 — 카즈베기 초원과 게르게티 교회 트레킹 개막.", "tags": ["기후", "자연"] },
+      "9": { "text": "포도 수확기(르트벨리) — 와인의 발상지에서 가을 미식, 산은 아직 온화.", "tags": ["기후"] }
+    },
+    "summary": "코카서스의 와인 요람 — 설산 아래 수도원.",
+    "highlights": ["게르게티 삼위일체 교회", "트빌리시 올드타운·유황 온천", "카헤티 와이너리", "조지아 미식(힌칼리·슈크메룰리)"],
+    "themes": ["자연", "미식", "문화·유적"],
+    "access": { "how": "경유 15h", "hours": 15 },
+    "recommendedDays": { "min": 6, "max": 8 },
+    "budgetLevel": 3
+  },
+  {
+    "id": "mx-cancun",
+    "name": { "ko": "칸쿤·유카탄", "local": "Cancún · Yucatán" },
+    "scope": "overseas",
+    "country": "멕시코",
+    "region": "아메리카",
+    "bestMonths": [1, 2, 12],
+    "peakMonth": 1,
+    "monthlyReasons": {
+      "12": { "text": "건기 개막 — 카리브해의 색이 돌아오는 연말.", "tags": ["기후"] },
+      "1": { "text": "건기 한복판 — 세노테·치첸이트사 투어 최적, 허리케인 시즌 밖.", "tags": ["기후"] },
+      "2": { "text": "건기 계속 — 파도 잔잔한 카리브 스노클링의 안정기.", "tags": ["기후"] }
+    },
+    "summary": "카리브의 옥빛과 마야 유적 — 겨울이 건기.",
+    "highlights": ["치첸이트사", "세노테 다이빙", "이슬라 무헤레스", "호텔존 비치"],
+    "themes": ["바다·리조트", "문화·유적"],
+    "access": { "how": "경유 16h+", "hours": 16 },
+    "recommendedDays": { "min": 6, "max": 8 },
+    "budgetLevel": 4
+  },
+  {
+    "id": "it-amalfi-capri",
+    "name": { "ko": "아말피·카프리", "local": "Amalfi · Capri" },
+    "scope": "overseas",
+    "country": "이탈리아",
+    "region": "유럽",
+    "bestMonths": [5, 6, 9],
+    "peakMonth": 5,
+    "monthlyReasons": {
+      "5": { "text": "레몬꽃 향의 해안도로 — 성수기 전 절벽 마을 산책.", "tags": ["기후", "비용·혼잡"] },
+      "6": { "text": "바다 수영 시작 — 카프리 푸른동굴 입장 안정기.", "tags": ["기후", "액티비티"] },
+      "9": { "text": "수온 최고 + 인파 감소 — 포지타노의 어깨철.", "tags": ["기후", "비용·혼잡"] }
+    },
+    "summary": "절벽에 매달린 마을들 — 레몬빛 해안 드라이브.",
+    "highlights": ["포지타노·라벨로", "카프리 푸른동굴", "아말피 해안도로", "리몬첼로 미식"],
+    "themes": ["바다·리조트", "드라이브", "미식"],
+    "access": { "how": "로마 경유 15h", "hours": 15 },
+    "recommendedDays": { "min": 6, "max": 8 },
+    "budgetLevel": 4
   }
 ]
