@@ -135,25 +135,51 @@ export function monthView(month, scope, picks, now, extras = { domestic: [], ove
   ${extraHtml}`;
 }
 
-// ── 국내/해외 브라우즈 (지방·권역 그룹) ──
-export function browse(scope, dests) {
+// ── 국내/해외 브라우즈 (지방·권역 그룹 + 도도부현/국가 필터) ──
+export function browse(scope, dests, filter = null) {
   const regions = scope === 'domestic' ? DOMESTIC_REGIONS : OVERSEAS_REGIONS;
-  const groups = regions
-    .map(r => ({ region: r, items: dests.filter(d => d.region === r) }))
-    .filter(g => g.items.length > 0)
-    .map(g => `
-      <section class="section">
-        <h2 class="section__title section__title--${scope}">${esc(regionLabel(g.region))}</h2>
-        <div class="cards">${g.items.map(browseCard).join('')}</div>
-      </section>`)
+  // 국내 = 도도부현, 해외 = 국가. '·'로 묶인 복수 지역은 분해해 양쪽 필터에서 매칭
+  const fieldParts = d => String(scope === 'domestic' ? (d.prefecture || d.region) : d.country).split('·');
+  const labelFn = scope === 'domestic' ? prefLabel : countryLabel;
+
+  // 카테고리 칩 — 지방/권역 순서대로 등장 순 정렬
+  const parts = [];
+  for (const r of regions) {
+    for (const d of dests.filter(x => x.region === r)) {
+      for (const p of fieldParts(d)) if (!parts.includes(p)) parts.push(p);
+    }
+  }
+  const base = `#/browse/${scope}`;
+  const filterChips = [`<a class="chip${!filter ? ' chip--active' : ''}" href="${base}">${esc(t('all'))}</a>`]
+    .concat(parts.map(p => `<a class="chip${filter === p ? ' chip--active' : ''}" href="${base}?f=${encodeURIComponent(p)}">${esc(labelFn(p))}</a>`))
     .join('');
+
+  let body;
+  if (filter) {
+    const items = dests.filter(d => fieldParts(d).includes(filter));
+    body = `
+    <p class="count">${t('foundCount', items.length)}</p>
+    <div class="cards">${items.map(browseCard).join('')}</div>`;
+  } else {
+    body = regions
+      .map(r => ({ region: r, items: dests.filter(d => d.region === r) }))
+      .filter(g => g.items.length > 0)
+      .map(g => `
+        <section class="section">
+          <h2 class="section__title section__title--${scope}">${esc(regionLabel(g.region))}</h2>
+          <div class="cards">${g.items.map(browseCard).join('')}</div>
+        </section>`)
+      .join('');
+  }
+
   return `
   <h1 class="page-title">${esc(t(scope === 'domestic' ? 'browseDomestic' : 'browseOverseas'))}</h1>
   <div class="segs">
     <a class="seg${scope === 'domestic' ? ' seg--active' : ''}" href="#/browse/domestic">${esc(scopeLabel('domestic'))}</a>
     <a class="seg${scope === 'overseas' ? ' seg--active' : ''}" href="#/browse/overseas">${esc(scopeLabel('overseas'))}</a>
   </div>
-  ${groups}`;
+  <div class="chips">${filterChips}</div>
+  ${body}`;
 }
 
 // ── 조건으로 찾기 ──

@@ -152,6 +152,20 @@ test('내 목록 — 위시·가봤음 섹션과 빈 상태', () => {
   assert.ok(!html.includes('undefined'));
 });
 
+test('브라우즈 — 국내 도도부현·해외 국가 필터', () => {
+  const nag = views.browse('domestic', domestic, '나가노현');
+  assert.match(nag, /카미코치/);
+  assert.match(nag, /하쿠바/);
+  assert.match(nag, /마고메·츠마고/); // '나가노현·기후현' 복수 표기도 분해 매칭
+  assert.ok(!nag.includes('니세코'), '홋카이도 여행지는 제외');
+  assert.ok(nag.includes(`?f=${encodeURIComponent('나가노현')}`), '필터 칩 URL');
+  const pt = views.browse('overseas', overseas, '포르투갈');
+  assert.match(pt, /스페인·포르투갈/); // 복수 국가 표기도 분해 매칭
+  assert.ok(!pt.includes('카파도키아'), '타국 여행지는 제외');
+  const noFilter = views.browse('domestic', domestic);
+  assert.match(noFilter, /홋카이도/); // 필터 없으면 기존 지방 그룹 유지
+});
+
 test('카드·상세 — 국내는 도도부현, 해외는 국가 표시', () => {
   const feb = views.monthView(2, 'all', picksFor(2, calendar, byId), 7);
   assert.match(feb, /야마가타현/); // 자오 온천 카드 메타

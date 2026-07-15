@@ -153,7 +153,8 @@ function render() {
     title = `tripbook — ${t('monthChip', m)}`;
   } else if (head === 'browse') {
     const scope = param === 'overseas' ? 'overseas' : 'domestic';
-    html = views.browse(scope, scope === 'domestic' ? db.domestic : db.overseas);
+    const filter = (query.get('f') || '').trim() || null;
+    html = views.browse(scope, scope === 'domestic' ? db.domestic : db.overseas, filter);
     tab = scope;
     title = `tripbook — ${scopeLabel(scope)}`;
   } else if (head === 'find') {
