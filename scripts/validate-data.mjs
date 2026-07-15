@@ -105,6 +105,23 @@ for (const m of MONTHS) {
   }
 }
 
+// ── D16: 일본어 번역 커버리지 (data/i18n) ──
+const jaMap = { ...read('../data/i18n/ja-domestic.json'), ...read('../data/i18n/ja-overseas.json') };
+for (const d of all) {
+  const j = jaMap[d.id];
+  if (!j) { warn('D16', `${d.id}: 일본어 번역 없음`); continue; }
+  if (!j.summary) warn('D16', `${d.id}: ja summary 누락`);
+  for (const k of Object.keys(d.monthlyReasons || {})) {
+    if (!j.reasons || !j.reasons[k]) warn('D16', `${d.id}: ja ${k}월 이유 누락`);
+  }
+  if (!Array.isArray(j.highlights) || !j.highlights.length) warn('D16', `${d.id}: ja highlights 누락`);
+  if (d.scope === 'overseas' && !j.name) warn('D16', `${d.id}: 해외 ja name 누락`);
+  if ((d.events || []).length && (!j.events || j.events.length !== d.events.length)) warn('D16', `${d.id}: ja events 개수 불일치`);
+}
+for (const id of Object.keys(jaMap)) {
+  if (!byId.has(id)) warn('D16', `ja 번역에만 존재하는 id — ${id}`);
+}
+
 // ── 결과 출력 ──
 const slotCount = MONTHS.reduce((n, m) => n + ((calendar[String(m)]?.domestic?.length || 0) + (calendar[String(m)]?.overseas?.length || 0)), 0);
 console.log(`여행지 ${all.length}건(국내 ${domestic.length}·해외 ${overseas.length}), 캘린더 슬롯 ${slotCount}개 검사`);

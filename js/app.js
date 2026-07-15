@@ -1,9 +1,10 @@
-// 엔트리 — 초기화·테마·라우트 바인딩
+// 엔트리 — 초기화·테마·언어·라우트 바인딩
 import { parseHash, startRouter } from './router.js';
-import { loadAll } from './data.js';
+import { loadAll, loadJa } from './data.js';
 import { currentMonth, nextMonth, normalizeMonth, picksFor, candidatesFor } from './calendar.js';
 import { findDestinations, dayBucket, parseThemes, DAY_BUCKETS } from './find.js';
 import { getSet, toggle } from './store.js';
+import { getLang, setLang, setJaData, t, scopeLabel, dName } from './i18n.js';
 import * as views from './views.js';
 
 const $app = document.getElementById('app');
@@ -29,6 +30,36 @@ function initTheme() {
     const next = dark ? 'light' : 'dark';
     localStorage.setItem(THEME_KEY, next);
     applyTheme(next);
+  });
+}
+
+// ── 언어 (한/일) ──
+function applyStaticLabels() {
+  document.documentElement.lang = getLang();
+  const btn = document.getElementById('lang-toggle');
+  if (btn) btn.textContent = getLang() === 'ja' ? 'KO' : 'JA'; // 버튼엔 전환 대상 표시
+  const labels = { home: t('tabHome'), month: t('tabMonth'), domestic: t('tabDomestic'), overseas: t('tabOverseas'), find: t('tabFind') };
+  document.querySelectorAll('.tabbar a').forEach(a => {
+    const txt = a.querySelector('.tab-txt');
+    if (txt && labels[a.dataset.tab]) txt.textContent = labels[a.dataset.tab];
+  });
+}
+
+async function ensureJa() {
+  if (getLang() === 'ja') setJaData(await loadJa());
+}
+
+function initLang() {
+  document.getElementById('lang-toggle').addEventListener('click', async () => {
+    setLang(getLang() === 'ja' ? 'ko' : 'ja');
+    try {
+      await ensureJa();
+    } catch (err) {
+      console.error(err);
+      setLang('ko'); // 로드 실패 시 한국어 유지
+    }
+    applyStaticLabels();
+    render();
   });
 }
 
@@ -92,7 +123,7 @@ function render() {
     const picks = picksFor(now, db.calendar, db.byId);
     const preview = picksFor(nextMonth(now), db.calendar, db.byId);
     html = views.home(now, picks, preview);
-    title = `tripbook — ${now}월의 여행지`;
+    title = `tripbook — ${t('homeTitle', now)}`;
   } else if (head === 'month') {
     if (param !== undefined && normalizeMonth(param) === null) {
       location.hash = `#/month/${now}`; // 잘못된 월 → 현재 월로 폴백 + URL 정정
@@ -109,24 +140,24 @@ function render() {
     };
     html = views.monthView(m, scope, picks, now, extras);
     tab = 'month';
-    title = `tripbook — ${m}월`;
+    title = `tripbook — ${t('monthChip', m)}`;
   } else if (head === 'browse') {
     const scope = param === 'overseas' ? 'overseas' : 'domestic';
     html = views.browse(scope, scope === 'domestic' ? db.domestic : db.overseas);
     tab = scope;
-    title = `tripbook — ${scope === 'domestic' ? '국내' : '해외'}`;
+    title = `tripbook — ${scopeLabel(scope)}`;
   } else if (head === 'find') {
     const p = parseFindParams(query);
     html = views.findView(p, runFind(p));
     tab = 'find';
-    title = 'tripbook — 조건으로 찾기';
+    title = `tripbook — ${t('findTitle').replace('🔎 ', '')}`;
     after = () => bindFindInput(p);
   } else if (head === 'list') {
     const wish = [...getSet('wish')].map(id => db.byId.get(id)).filter(Boolean);
     const visited = [...getSet('visited')].map(id => db.byId.get(id)).filter(Boolean);
     html = views.listView(wish, visited);
     tab = '';
-    title = 'tripbook — 내 목록';
+    title = `tripbook — ${t('myList')}`;
   } else if (head === 'place') {
     const d = db.byId.get(param);
     if (!d) {
@@ -139,7 +170,7 @@ function render() {
       const state = { wish: getSet('wish').has(d.id), visited: getSet('visited').has(d.id) };
       html = views.place(d, m, others, state);
       tab = d.scope === 'domestic' ? 'domestic' : 'overseas';
-      title = `tripbook — ${d.name.ko}`;
+      title = `tripbook — ${dName(d)}`;
     }
   } else {
     html = views.notFound();
@@ -150,7 +181,7 @@ function render() {
   document.title = title;
   updateTabs(tab);
   if (after) after();
-  if (location.hash !== lastHash) { // 위시 토글 등 같은 화면 재렌더 시 스크롤 유지
+  if (location.hash !== lastHash) { // 위시 토글·언어 전환 등 같은 화면 재렌더 시 스크롤 유지
     window.scrollTo(0, 0);
     lastHash = location.hash;
   }
@@ -158,14 +189,17 @@ function render() {
 
 async function main() {
   initTheme();
+  initLang();
   try {
     db = await loadAll();
+    await ensureJa(); // 저장된 언어가 JA면 첫 렌더 전에 로드
   } catch (err) {
     console.error(err);
     $app.innerHTML = views.loadError();
     document.getElementById('retry').addEventListener('click', () => location.reload());
     return;
   }
+  applyStaticLabels();
   // 위시리스트·가봤음 토글 (위임 핸들러)
   $app.addEventListener('click', e => {
     const btn = e.target.closest('[data-action]');

@@ -6,6 +6,7 @@ async function fetchJson(url) {
 }
 
 let cache = null;
+let jaCache = null;
 
 export async function loadAll() {
   if (cache) return cache;
@@ -19,4 +20,15 @@ export async function loadAll() {
   for (const d of [...domestic, ...overseas]) byId.set(d.id, d);
   cache = { calendar, domestic, overseas, byId };
   return cache;
+}
+
+// 일본어 오버레이 — JA 모드에서만 지연 로드
+export async function loadJa() {
+  if (jaCache) return jaCache;
+  const [a, b] = await Promise.all([
+    fetchJson('data/i18n/ja-domestic.json'),
+    fetchJson('data/i18n/ja-overseas.json'),
+  ]);
+  jaCache = { ...a, ...b };
+  return jaCache;
 }

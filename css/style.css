@@ -89,6 +89,7 @@ a { color: inherit; text-decoration: none; }
 
 .topbar__acts { display: flex; gap: 6px; align-items: center; }
 .topbar__acts .icon-btn { text-decoration: none; line-height: 1.4; }
+.icon-btn--lang { font-size: 12px; font-weight: 800; letter-spacing: .3px; padding: 7px 9px; }
 
 .icon-btn {
   border: 1px solid var(--border);

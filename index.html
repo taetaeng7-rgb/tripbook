@@ -14,6 +14,7 @@
     <a class="brand" href="#/">tripbook <span aria-hidden="true">✈️</span></a>
     <div class="topbar__acts">
       <a class="icon-btn" href="#/list" aria-label="내 목록(위시리스트)">♥</a>
+      <button id="lang-toggle" class="icon-btn icon-btn--lang" type="button" aria-label="한국어/일본어 전환">JA</button>
       <button id="theme-toggle" class="icon-btn" type="button" aria-label="라이트/다크 전환">🌙</button>
     </div>
   </header>
@@ -27,11 +28,11 @@
   </main>
 
   <nav class="tabbar" aria-label="주요 화면">
-    <a data-tab="home" href="#/"><span aria-hidden="true">🏠</span>홈</a>
-    <a data-tab="month" href="#/month"><span aria-hidden="true">📅</span>월별</a>
-    <a data-tab="domestic" href="#/browse/domestic"><span aria-hidden="true">🗾</span>국내</a>
-    <a data-tab="overseas" href="#/browse/overseas"><span aria-hidden="true">✈️</span>해외</a>
-    <a data-tab="find" href="#/find"><span aria-hidden="true">🔎</span>찾기</a>
+    <a data-tab="home" href="#/"><span aria-hidden="true">🏠</span><span class="tab-txt">홈</span></a>
+    <a data-tab="month" href="#/month"><span aria-hidden="true">📅</span><span class="tab-txt">월별</span></a>
+    <a data-tab="domestic" href="#/browse/domestic"><span aria-hidden="true">🗾</span><span class="tab-txt">국내</span></a>
+    <a data-tab="overseas" href="#/browse/overseas"><span aria-hidden="true">✈️</span><span class="tab-txt">해외</span></a>
+    <a data-tab="find" href="#/find"><span aria-hidden="true">🔎</span><span class="tab-txt">찾기</span></a>
   </nav>
 
   <script type="module" src="js/app.js"></script>
