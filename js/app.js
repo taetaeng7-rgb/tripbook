@@ -70,6 +70,16 @@ function updateTabs(active) {
   });
 }
 
+// 재렌더 시 칩 스크롤이 초기화되므로, 선택된 칩이 항상 보이도록 가운데로 스크롤
+function centerActiveChips() {
+  document.querySelectorAll('.chips').forEach(c => {
+    const active = c.querySelector('.chip--active');
+    if (!active || c.scrollWidth <= c.clientWidth) return;
+    const delta = active.getBoundingClientRect().left - c.getBoundingClientRect().left;
+    c.scrollLeft += delta - (c.clientWidth - active.offsetWidth) / 2;
+  });
+}
+
 // ── 찾기 파라미터 해석 ──
 function parseFindParams(query) {
   const rawM = query.get('m');
@@ -180,6 +190,7 @@ function render() {
   $app.innerHTML = html;
   document.title = title;
   updateTabs(tab);
+  centerActiveChips();
   if (after) after();
   if (location.hash !== lastHash) { // 위시 토글·언어 전환 등 같은 화면 재렌더 시 스크롤 유지
     window.scrollTo(0, 0);
