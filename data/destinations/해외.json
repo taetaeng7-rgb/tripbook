@@ -1361,5 +1361,129 @@
     "access": { "how": "로마 경유 15h", "hours": 15 },
     "recommendedDays": { "min": 6, "max": 8 },
     "budgetLevel": 4
+  },
+  {
+    "id": "tw-alishan-taichung",
+    "name": { "ko": "아리산·타이중", "local": "阿里山・台中" },
+    "scope": "overseas",
+    "country": "대만",
+    "region": "동아시아",
+    "bestMonths": [3, 4],
+    "peakMonth": 3,
+    "monthlyReasons": {
+      "3": { "text": "아리산 벚꽃 시즌(예년 3월 중순~4월 상순) — 숲 철도로 오르는 벚꽃과 운해 일출.", "tags": ["자연"] },
+      "4": { "text": "벚꽃 후반 + 고산차 봄차(春茶) 시즌 — 서늘한 고산의 봄.", "tags": ["자연", "기후"] }
+    },
+    "summary": "구름 위 벚꽃 철도 — 일출과 차밭의 고산.",
+    "highlights": ["아리산 삼림열차", "주산(祝山) 일출·운해", "자오핑 벚꽃", "고산차 다원"],
+    "themes": ["자연", "벚꽃", "산악"],
+    "access": { "how": "나리타→타이중 3.5h + 차 2.5h", "hours": 7 },
+    "recommendedDays": { "min": 3, "max": 4 },
+    "budgetLevel": 3,
+    "tips": ["일출은 산 위 숙박이 정석 — 벚꽃기 산장·호텔 조기 마감"]
+  },
+  {
+    "id": "cn-xian",
+    "name": { "ko": "시안", "local": "西安" },
+    "scope": "overseas",
+    "country": "중국",
+    "region": "동아시아",
+    "bestMonths": [4, 5, 10],
+    "peakMonth": 4,
+    "monthlyReasons": {
+      "4": { "text": "병마용과 성벽 자전거 — 봄의 쾌적한 유적 순례.", "tags": ["기후"] },
+      "5": { "text": "여름 더위 전 마지막 쾌적기 — 회족거리 야시장의 계절.", "tags": ["기후"] },
+      "10": { "text": "가을의 건조한 하늘 — 화산(華山) 트레킹의 최적기.", "tags": ["기후", "액티비티"] }
+    },
+    "summary": "천년 고도의 지하 군단 — 병마용과 성벽의 도시.",
+    "highlights": ["병마용", "시안 성벽 자전거", "회족거리 미식", "화산 당일 투어"],
+    "themes": ["문화·유적", "미식"],
+    "access": { "how": "직항/경유 5~7h", "hours": 6 },
+    "recommendedDays": { "min": 4, "max": 5 },
+    "budgetLevel": 3
+  },
+  {
+    "id": "tz-serengeti",
+    "name": { "ko": "세렝게티·응고롱고로", "local": "Serengeti · Ngorongoro" },
+    "scope": "overseas",
+    "country": "탄자니아",
+    "region": "중동·아프리카",
+    "bestMonths": [1, 2, 7],
+    "peakMonth": 2,
+    "monthlyReasons": {
+      "1": { "text": "남부 세렝게티에 누 대군이 모이는 출산 시즌 개막.", "tags": ["자연"] },
+      "2": { "text": "누 출산 절정 — 하루 수천 마리가 태어나고 포식자가 모이는 대자연의 정점.", "tags": ["자연"] },
+      "7": { "text": "건기 사파리와 그루메티강 도하 — 마사이마라로 넘어가기 전의 대이동.", "tags": ["자연"] }
+    },
+    "summary": "끝없는 평원 — 누 출산의 1~2월, 대이동의 여름.",
+    "highlights": ["누 출산 시즌(1~2월 남부)", "응고롱고로 분화구 사파리", "세렝게티 열기구", "빅5 게임드라이브"],
+    "themes": ["사파리", "자연"],
+    "access": { "how": "경유 18h+", "hours": 18 },
+    "recommendedDays": { "min": 7, "max": 9 },
+    "budgetLevel": 5,
+    "tips": ["마사이마라(7~10월)와 시즌이 보완 관계 — 1~2월은 탄자니아가 정답"]
+  },
+  {
+    "id": "id-yogyakarta",
+    "name": { "ko": "족자카르타", "local": "Yogyakarta" },
+    "scope": "overseas",
+    "country": "인도네시아",
+    "region": "동남아시아",
+    "bestMonths": [5, 7, 8],
+    "peakMonth": 7,
+    "monthlyReasons": {
+      "5": { "text": "건기 초입 — 보로부두르 일출 투어의 안정기 시작.", "tags": ["기후"] },
+      "7": { "text": "건기 절정 — 보로부두르·프람바난 관람 최적, 므라피 화산 조망.", "tags": ["기후"] },
+      "8": { "text": "건기 계속 — 프람바난 야외 라마야나 발레(건기 시즌)의 밤.", "tags": ["기후", "축제"] }
+    },
+    "summary": "세계 최대 불교 유적의 일출 — 자바 문명의 심장.",
+    "highlights": ["보로부두르 일출", "프람바난 힌두 사원군", "라마야나 발레(건기 밤)", "므라피 화산 지프 투어"],
+    "themes": ["문화·유적"],
+    "access": { "how": "자카르타/발리 경유 10h+", "hours": 11 },
+    "recommendedDays": { "min": 4, "max": 5 },
+    "budgetLevel": 3,
+    "tips": ["보로부두르는 입장 인원제·사전 예약 — 일출편은 특히 서두를 것"]
+  },
+  {
+    "id": "at-salzburg-hallstatt",
+    "name": { "ko": "잘츠부르크·할슈타트", "local": "Salzburg · Hallstatt" },
+    "scope": "overseas",
+    "country": "오스트리아",
+    "region": "유럽",
+    "bestMonths": [5, 9, 12],
+    "peakMonth": 5,
+    "monthlyReasons": {
+      "5": { "text": "사운드 오브 뮤직의 초원이 초록으로 — 호수 마을 산책의 최적기.", "tags": ["기후", "자연"] },
+      "9": { "text": "가을빛 잘츠캄머구트 — 인파가 빠진 할슈타트의 어깨철.", "tags": ["기후", "비용·혼잡"] },
+      "12": { "text": "눈 덮인 할슈타트와 잘츠부르크 크리스마스 마켓 — 겨울 동화의 완성.", "tags": ["축제", "자연"] }
+    },
+    "summary": "호수와 음악의 나라 — 잘츠캄머구트의 사계.",
+    "highlights": ["할슈타트 호수 마을", "미라벨 정원·잘츠부르크 구시가", "장크트볼프강 호수", "소금광산 투어"],
+    "themes": ["자연", "도시", "문화·유적"],
+    "access": { "how": "뮌헨/빈 경유 15h", "hours": 15 },
+    "recommendedDays": { "min": 5, "max": 7 },
+    "budgetLevel": 4,
+    "cautions": ["할슈타트는 당일 인파 극심 — 숙박하고 아침·저녁을 노릴 것"]
+  },
+  {
+    "id": "ar-cl-patagonia",
+    "name": { "ko": "파타고니아", "local": "Patagonia" },
+    "scope": "overseas",
+    "country": "아르헨티나·칠레",
+    "region": "아메리카",
+    "bestMonths": [1, 2, 12],
+    "peakMonth": 1,
+    "monthlyReasons": {
+      "12": { "text": "남반구 여름 개막 — 토레스델파이네 W트레킹 시즌 인.", "tags": ["기후", "액티비티"] },
+      "1": { "text": "한여름의 파타고니아 — 피츠로이·모레노 빙하 트레킹의 최적기(바람은 각오).", "tags": ["기후", "액티비티"] },
+      "2": { "text": "여름 끝물의 안정 — 인파가 살짝 빠진 트레일.", "tags": ["기후", "비용·혼잡"] }
+    },
+    "summary": "바람의 대지 — 빙하와 화강암 봉우리의 끝없는 트레일.",
+    "highlights": ["토레스델파이네 W코스", "페리토 모레노 빙하", "피츠로이(엘찰텐)", "푸에르토나탈레스"],
+    "themes": ["트레킹", "자연", "산악"],
+    "access": { "how": "경유 30h+", "hours": 30 },
+    "recommendedDays": { "min": 10, "max": 14 },
+    "budgetLevel": 5,
+    "cautions": ["여름에도 강풍·급변 날씨 — 방풍 장비 필수", "산장·트레킹 퍼밋은 수개월 전 예약"]
   }
 ]
