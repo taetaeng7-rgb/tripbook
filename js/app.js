@@ -3,7 +3,7 @@ import { parseHash, startRouter } from './router.js';
 import { loadAll, loadJa } from './data.js';
 import { currentMonth, nextMonth, normalizeMonth, picksFor, candidatesFor } from './calendar.js';
 import { findDestinations, dayBucket, parseThemes, DAY_BUCKETS } from './find.js';
-import { getSet, toggle } from './store.js';
+import { getSet, toggle, clear } from './store.js';
 import { getLang, setLang, setJaData, t, scopeLabel, dName } from './i18n.js';
 import * as views from './views.js';
 
@@ -163,6 +163,12 @@ function render() {
     tab = 'find';
     title = `tripbook — ${t('findTitle').replace('🔎 ', '')}`;
     after = () => bindFindInput(p);
+  } else if (head === 'pack') {
+    const mods = parseThemes(query.get('m'));
+    const overseas = mods.includes('overseas');
+    html = views.packView({ overseas, mods: mods.filter(x => x !== 'overseas') }, getSet('pack'));
+    tab = '';
+    title = `tripbook — ${t('packTitle').replace('🎒 ', '')}`;
   } else if (head === 'list') {
     const wish = [...getSet('wish')].map(id => db.byId.get(id)).filter(Boolean);
     const visited = [...getSet('visited')].map(id => db.byId.get(id)).filter(Boolean);
@@ -212,11 +218,23 @@ async function main() {
     return;
   }
   applyStaticLabels();
-  // 위시리스트·가봤음 토글 (위임 핸들러)
+  // 위시리스트·가봤음 토글 + 준비물 초기화 (위임 핸들러)
   $app.addEventListener('click', e => {
     const btn = e.target.closest('[data-action]');
     if (!btn) return;
+    if (btn.dataset.action === 'pack-reset') {
+      clear('pack');
+      render();
+      return;
+    }
     toggle(btn.dataset.action, btn.dataset.id);
+    render();
+  });
+  // 준비물 체크박스 (진행률 갱신 — 같은 해시라 스크롤 유지)
+  $app.addEventListener('change', e => {
+    const cb = e.target.closest('input[data-pack]');
+    if (!cb) return;
+    toggle('pack', cb.dataset.pack);
     render();
   });
   startRouter(render);

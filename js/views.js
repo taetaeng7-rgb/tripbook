@@ -3,9 +3,10 @@ import { THEMES, DOMESTIC_REGIONS, OVERSEAS_REGIONS, SCOPES } from './config.js'
 import { isPeak, reasonMonths, nextMonth } from './calendar.js';
 import { DAY_BUCKETS } from './find.js';
 import {
-  t, bucketLabel, scopeLabel, regionLabel, themeLabel, tagLabel, prefLabel, countryLabel,
+  t, pick, bucketLabel, scopeLabel, regionLabel, themeLabel, tagLabel, prefLabel, countryLabel,
   budgetLabel, holidayItems, dName, dAltName, dSummary, dReason, dList, dAccess, dEvents,
 } from './i18n.js';
+import { PACK_MODULES, PACK_SECTIONS, packItemVisible } from './packing.js';
 
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => (
   { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]
@@ -292,6 +293,7 @@ export function place(d, ctxMonth, others, state = { wish: false, visited: false
     <div class="acts">
       <button type="button" class="act${state.wish ? ' act--on' : ''}" data-action="wish" data-id="${esc(d.id)}">${esc(state.wish ? t('wishOn') : t('wishOff'))}</button>
       <button type="button" class="act act--visited${state.visited ? ' act--on' : ''}" data-action="visited" data-id="${esc(d.id)}">${esc(state.visited ? t('visitedOn') : t('visitedOff'))}</button>
+      <a class="act act--map" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent((d.name.local || d.name.ko).split(/[·・]/)[0].trim())}">${esc(t('mapBtn'))}</a>
     </div>
 
     <section class="section">
@@ -320,6 +322,57 @@ export function place(d, ctxMonth, others, state = { wish: false, visited: false
     ${eventsHtml}
     ${othersHtml}
   </article>`;
+}
+
+// ── 여행 준비물 체크리스트 ──
+function packUrl(overseas, mods) {
+  const m = [...(overseas ? ['overseas'] : []), ...mods];
+  return m.length ? `#/pack?m=${encodeURIComponent(m.join(','))}` : '#/pack';
+}
+
+export function packView(p, checked) {
+  const scopeSegs = `
+    <a class="seg${!p.overseas ? ' seg--active' : ''}" href="${packUrl(false, p.mods)}">${esc(scopeLabel('domestic'))}</a>
+    <a class="seg${p.overseas ? ' seg--active' : ''}" href="${packUrl(true, p.mods)}">${esc(scopeLabel('overseas'))}</a>`;
+
+  const modChips = PACK_MODULES.map(mod => {
+    const on = p.mods.includes(mod.key);
+    const next = on ? p.mods.filter(x => x !== mod.key) : [...p.mods, mod.key];
+    return `<a class="chip${on ? ' chip--on' : ''}" href="${packUrl(p.overseas, next)}">${esc(pick(mod.label))}</a>`;
+  }).join('');
+
+  let total = 0;
+  let done = 0;
+  const sections = PACK_SECTIONS.map(sec => {
+    const items = sec.items.filter(it => packItemVisible(it, p.overseas, p.mods));
+    if (!items.length) return '';
+    const rows = items.map(it => {
+      const on = checked.has(it.id);
+      total += 1;
+      if (on) done += 1;
+      return `
+      <label class="pack-item${on ? ' pack-item--on' : ''}">
+        <input type="checkbox" data-pack="${esc(it.id)}"${on ? ' checked' : ''}>
+        <span>${esc(pick(it.label))}</span>
+      </label>`;
+    }).join('');
+    return `
+    <section class="section">
+      <h2 class="section__title">${esc(pick(sec.label))}</h2>
+      <div class="pack-list">${rows}</div>
+    </section>`;
+  }).join('');
+
+  return `
+  <h1 class="page-title">${esc(t('packTitle'))}</h1>
+  <p class="page-sub">${esc(t('packSub'))}</p>
+  <div class="segs">${scopeSegs}</div>
+  <div class="filter-row"><div class="chips chips--wrap">${modChips}</div></div>
+  <div class="pack-bar">
+    <p class="count">${t('packProgress', done, total)}</p>
+    <button type="button" class="chip" data-action="pack-reset">${esc(t('packReset'))}</button>
+  </div>
+  ${sections}`;
 }
 
 export function notFound() {

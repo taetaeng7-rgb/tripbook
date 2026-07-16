@@ -392,3 +392,24 @@ a { color: inherit; text-decoration: none; }
 }
 .act--on { background: var(--warn-bg); border-color: var(--warn-fg); color: var(--warn-fg); }
 .act--visited.act--on { background: var(--domestic-soft); border-color: var(--domestic); color: var(--domestic); }
+.act--map { display: flex; align-items: center; justify-content: center; text-align: center; }
+
+/* ── 여행 준비물 체크리스트 ── */
+.pack-bar { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin: 6px 0 2px; }
+.pack-bar .chip { cursor: pointer; font-family: inherit; }
+
+.pack-list { display: grid; gap: 6px; }
+.pack-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 13px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  font-size: 14.5px;
+  cursor: pointer;
+}
+.pack-item input { width: 17px; height: 17px; accent-color: var(--domestic); flex: 0 0 auto; }
+.pack-item--on { border-color: var(--domestic); }
+.pack-item--on span { color: var(--muted); text-decoration: line-through; }

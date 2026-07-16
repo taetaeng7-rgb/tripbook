@@ -48,6 +48,11 @@ const UI = {
     monthChip: m => `${m}월`,
     noHoliday: m => `🗓 ${m}월은 공휴일이 없는 달 — 어디를 가도 비교적 한산.`,
     bucket: { any: '전체', weekend: '1~2일', short: '3~4일', week: '5~7일', long: '8일~' },
+    mapBtn: '🗺 지도',
+    packTitle: '🎒 여행 준비물',
+    packSub: '여행 종류를 고르면 체크리스트가 만들어져요. 체크 상태는 이 기기에 저장됩니다.',
+    packProgress: (a, b) => `챙긴 것 <strong>${a}</strong> / ${b}`,
+    packReset: '체크 초기화',
   },
   ja: {
     tabHome: 'ホーム', tabMonth: '月別', tabDomestic: '国内', tabOverseas: '海外', tabFind: '探す',
@@ -81,6 +86,11 @@ const UI = {
     monthChip: m => `${m}月`,
     noHoliday: m => `🗓 ${m}月は祝日のない月 — どこへ行っても比較的空いている。`,
     bucket: { any: 'すべて', weekend: '1~2日', short: '3~4日', week: '5~7日', long: '8日~' },
+    mapBtn: '🗺 地図',
+    packTitle: '🎒 旅の持ち物',
+    packSub: '旅のタイプを選ぶとチェックリストができます。チェック状態はこの端末に保存されます。',
+    packProgress: (a, b) => `準備済み <strong>${a}</strong> / ${b}`,
+    packReset: 'チェックをリセット',
   },
 };
 
@@ -88,6 +98,8 @@ export function t(key, ...args) {
   const v = UI[lang][key] ?? UI.ko[key] ?? key;
   return typeof v === 'function' ? v(...args) : v;
 }
+// {ko, ja} 객체에서 현재 언어 선택 (준비물 데이터 등)
+export const pick = o => (o && (o[lang] ?? o.ko)) ?? '';
 export function bucketLabel(key) { return UI[lang].bucket[key] || UI.ko.bucket[key] || key; }
 
 // ── 분류 라벨 사전 ──
